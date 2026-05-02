@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -8,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pigmentica</title>
+
 <style>
 
 body {
@@ -16,9 +18,45 @@ body {
 
     font-family: 'Georgia', serif;
 
-    background-color: #f8f5f2;
+    color: white;
 
-    color: #333;
+    background: linear-gradient(135deg, #5a0c0c, #2b0000);
+
+    overflow-x: hidden;
+
+}
+
+/* ✨ MOVING BURGUNDY DUST */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 200%;
+
+    height: 200%;
+
+    top: -50%;
+
+    left: -50%;
+
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    animation: moveDust 60s linear infinite;
+
+    z-index: 0;
+
+}
+
+@keyframes moveDust {
+
+    from { transform: translate(0,0); }
+
+    to { transform: translate(200px,200px); }
 
 }
 
@@ -40,49 +78,69 @@ body {
 
     text-align: center;
 
-    margin-top: -80px;
+    margin-top: -100px;
+
+    position: relative;
+
+    z-index: 2;
 
 }
 
 .logo img {
 
-    width: 160px;
+    width: 220px;
 
     border-radius: 50%;
 
-    border: 5px solid white;
+    border: 4px solid rgba(255,255,255,0.6);
 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 
 }
 
-/* TEXT SECTION */
+/* CONTENT */
 
 .content {
 
     text-align: center;
 
-    padding: 30px 20px;
+    padding: 40px 20px;
+
+    position: relative;
+
+    z-index: 2;
 
 }
 
 h1 {
 
-    font-size: 36px;
+    font-size: 42px;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
 
 }
 
-p {
+.tagline {
+
+    font-size: 18px;
+
+    opacity: 0.85;
+
+    margin-bottom: 20px;
+
+}
+
+.desc {
 
     font-size: 16px;
 
-    color: #777;
-
     max-width: 500px;
 
-    margin: 10px auto;
+    margin: auto;
+
+    opacity: 0.8;
 
 }
 
@@ -92,11 +150,11 @@ p {
 
     display: inline-block;
 
-    margin-top: 20px;
+    margin-top: 30px;
 
-    padding: 12px 25px;
+    padding: 14px 30px;
 
-    background: #7A0C0C;
+    background: #a31515;
 
     color: white;
 
@@ -104,38 +162,54 @@ p {
 
     border-radius: 30px;
 
-    font-size: 14px;
+    font-size: 15px;
+
+    transition: 0.3s;
 
 }
 
 .button:hover {
 
-    background: #A31515;
+    background: #d12a2a;
+
+    transform: translateY(-2px);
 
 }
 
 </style>
+
 </head>
-  <body>
-    <div class="hero"></div>
-    <div class="logo">
 
-    <img src="logo.jpg" alt="Pigmentica Logo">
+<body>
 
-</div
-  <div class="content">
+<div class="hero"></div>
+
+<div class="logo">
+
+    <img src="logo.png" alt="Pigmentica Logo">
+
+</div>
+
+<div class="content">
 
     <h1>PIGMENTICA</h1>
 
-    <p>Semi-Permanent Makeup</p>
+    <div class="tagline">Semi-Permanent Makeup</div>
 
-    <p>Enhancing natural beauty. Empowering confidenc
-      <a class="button" href="https://wa.me/447550012000">
+    <div class="desc">
 
-    Book Appointment
+        Enhancing natural beauty. Empowering confidence.
 
-</a
-  </div>
-  </body>
+    </div>
 
-</html
+    <a class="button" href="https://wa.me/447550012000">
+
+        Book Appointment
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
