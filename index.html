@@ -12,8 +12,28 @@ body {
    margin: 0;
    font-family: 'Georgia', serif;
    color: white;
-   background: radial-gradient(circle at top, #6a0d0d, #1a0000);
    scroll-behavior: smooth;
+}
+
+/* 🎥 FULL PAGE VIDEO BACKGROUND */
+.bg-video {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   min-width: 100%;
+   min-height: 100%;
+   width: auto;
+   height: auto;
+   transform: translate(-50%, -50%);
+   object-fit: cover;
+   z-index: -1;
+   filter: brightness(0.35) contrast(1.1);
+}
+
+/* CONTENT ABOVE VIDEO */
+.menu, .hero, .section {
+   position: relative;
+   z-index: 2;
 }
 
 /* METALLIC GOLD TEXT */
@@ -42,26 +62,6 @@ body {
    100% { background-position: 200% center; }
 }
 
-/* BACKGROUND DUST */
-body::before {
-   content: "";
-   position: fixed;
-   width: 200%;
-   height: 200%;
-   top: -50%;
-   left: -50%;
-   background: radial-gradient(circle, rgba(255,215,0,0.15) 2px, transparent 3px);
-   background-size: 250px 250px;
-   animation: floatDust 35s linear infinite;
-   z-index: 0;
-   pointer-events: none;
-}
-
-@keyframes floatDust {
-   0% { transform: translate(0,0); }
-   100% { transform: translate(200px,200px); }
-}
-
 /* MENU */
 .menu {
    position: fixed;
@@ -82,31 +82,19 @@ body::before {
    display: flex;
    align-items: center;
    justify-content: center;
-   position: relative;
-   z-index: 2;
-}
-
-.hero h1 {
-   font-size: 48px;
-   letter-spacing: 4px;
+   text-align: center;
 }
 
 /* SECTIONS */
 .section {
    padding: 80px 20px;
    text-align: center;
-   position: relative;
-   z-index: 2;
-}
-
-.section h2 {
-   margin-bottom: 20px;
 }
 
 .section p {
    max-width: 500px;
    margin: auto;
-   opacity: 0.85;
+   opacity: 0.9;
 }
 
 /* BUTTON */
@@ -124,6 +112,12 @@ body::before {
 
 <body>
 
+<!-- GLOBAL VIDEO BACKGROUND -->
+<video autoplay muted loop playsinline class="bg-video">
+ <source src="background.mp4" type="video/mp4">
+</video>
+
+<!-- MENU -->
 <div class="menu">
  <a href="#about" class="gold-text">About</a>
  <a href="#treatments" class="gold-text">Treatments</a>
@@ -131,25 +125,30 @@ body::before {
  <a href="#contact" class="gold-text">Contact</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
  <h1 class="gold-text">PIGMENTICA</h1>
 </div>
 
+<!-- ABOUT -->
 <div class="section" id="about">
  <h2 class="gold-text">About</h2>
  <p>Enhancing natural beauty through expert semi-permanent makeup.</p>
 </div>
 
+<!-- TREATMENTS -->
 <div class="section" id="treatments">
  <h2 class="gold-text">Treatments</h2>
  <p>Brows • Lips • Eyeliner</p>
 </div>
 
+<!-- PRICES -->
 <div class="section" id="prices">
  <h2 class="gold-text">Prices</h2>
  <p>Brows £250 | Lips £220 | Eyeliner £180</p>
 </div>
 
+<!-- CONTACT -->
 <div class="section" id="contact">
  <h2 class="gold-text">Contact</h2>
  <p>0755 001 2000</p>
