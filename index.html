@@ -206,15 +206,40 @@ body {
 
    font-family: 'Nothing You Could Do', cursive;
 
-   font-size: 34px;
-
-   letter-spacing: 1px;
-
-   margin-top: 15px;
+   font-size: 36px;
 
    color: #f5e6c8;
 
-   opacity: 0.95;
+   margin-top: 15px;
+
+   display: inline-block;
+
+   overflow: hidden;
+
+   /* animation */
+
+   animation: handwriting 3s ease forwards;
+
+}
+ @keyframes handwriting {
+
+   0% {
+
+      clip-path: inset(0 100% 0 0);
+
+      opacity: 0;
+
+   }
+
+   100% {
+
+      clip-path: inset(0 0 0 0);
+
+      opacity: 1;
+
+   }
+
+}
 
 }
 }
