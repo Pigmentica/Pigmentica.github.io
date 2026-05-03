@@ -99,7 +99,7 @@
     letter-spacing: 1px;
 
 }
-   @media (max-width: 768px) {
+ @media (max-width: 768px) {
 
   .about-container {
 
@@ -111,6 +111,16 @@
 
   .about-text {
 
+    align-items: center;
+
+    text-align: center;
+
+  }
+
+}
+
+ .about-text {
+
   flex: 1;
 
   max-width: 500px;
@@ -119,11 +129,11 @@
 
   flex-direction: column;
 
-  justify-content: center; /* vertical center */
+  justify-content: center;
 
-  align-items: flex-start; /* ⬅️ THIS fixes horizontal alignment */
+  align-items: flex-start; /* keeps text to the right side */
 
-  text-align: left;        /* ⬅️ ensures text is not centered */
+  text-align: left;
 
 }
  .section {
