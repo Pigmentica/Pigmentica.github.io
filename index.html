@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -9,8 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pigmentica</title>
-
 <style>
+
+/* BASE */
 
 body {
 
@@ -20,13 +20,13 @@ body {
 
     color: white;
 
-    background: linear-gradient(135deg, #5a0c0c, #2b0000);
+    background: linear-gradient(135deg, #4b0b0b, #1a0000);
 
-    overflow-x: hidden;
+    scroll-behavior: smooth;
 
 }
 
-/* ✨ MOVING BURGUNDY DUST */
+/* ✨ DUST BACKGROUND */
 
 body::before {
 
@@ -42,17 +42,17 @@ body::before {
 
     left: -50%;
 
-    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255,215,0,0.05) 1px, transparent 1px);
 
-    background-size: 40px 40px;
+    background-size: 50px 50px;
 
-    animation: moveDust 60s linear infinite;
+    animation: dust 80s linear infinite;
 
     z-index: 0;
 
 }
 
-@keyframes moveDust {
+@keyframes dust {
 
     from { transform: translate(0,0); }
 
@@ -60,115 +60,95 @@ body::before {
 
 }
 
+/* MENU */
+
+.menu {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 10;
+
+}
+
+.menu a {
+
+    display: block;
+
+    margin: 10px 0;
+
+    color: gold;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+.menu a:hover {
+
+    opacity: 0.7;
+
+}
+
 /* HERO */
 
 .hero {
 
-    height: 45vh;
+    height: 90vh;
 
-    background: url('banner.jpg') center/cover no-repeat;
+    display: flex;
 
-}
+    align-items: center;
 
-/* LOGO */
-
-.logo {
+    justify-content: center;
 
     text-align: center;
 
-    margin-top: -100px;
+}
 
-    position: relative;
+.hero h1 {
 
-    z-index: 2;
+    font-size: 48px;
+
+    letter-spacing: 4px;
 
 }
 
-.logo img {
+/* SECTIONS */
 
-    width: 220px;
+.section {
 
-    border-radius: 50%;
-
-    border: 4px solid rgba(255,255,255,0.6);
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-}
-
-/* CONTENT */
-
-.content {
+    padding: 80px 20px;
 
     text-align: center;
 
-    padding: 40px 20px;
+}
 
-    position: relative;
+.section h2 {
 
-    z-index: 2;
+    color: gold;
+
+    margin-bottom: 20px;
 
 }
 
-h1 {
-
-    font-size: 42px;
-
-    letter-spacing: 3px;
-
-}
-
-.tagline {
-
-    font-size: 18px;
-
-    opacity: 0.85;
-
-}
-
-.desc {
-
-    font-size: 16px;
+.section p {
 
     max-width: 500px;
 
     margin: auto;
 
-    opacity: 0.8;
+    opacity: 0.85;
 
 }
 
-/* BUTTON */
-
-.button {
-
-    display: inline-block;
-
-    margin-top: 30px;
-
-    padding: 14px 30px;
-
-    background: #a31515;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    transition: 0.3s;
-
-}
-
-.button:hover {
-
-    background: #d12a2a;
-
-    transform: translateY(-2px);
-
-}
-
-/* SLIDER */
+/* TREATMENTS */
 
 .treatments {
 
@@ -176,11 +156,9 @@ h1 {
 
     overflow-x: auto;
 
-    gap: 15px;
+    gap: 20px;
 
     padding: 20px;
-
-    scroll-snap-type: x mandatory;
 
 }
 
@@ -190,15 +168,11 @@ h1 {
 
     height: 320px;
 
-    position: relative;
-
     border-radius: 20px;
 
     overflow: hidden;
 
-    scroll-snap-align: start;
-
-    flex-shrink: 0;
+    position: relative;
 
 }
 
@@ -216,84 +190,115 @@ h1 {
 
     position: absolute;
 
-    bottom: 15px;
+    bottom: 20px;
 
     left: 20px;
 
     color: white;
 
-    font-size: 22px;
+    font-size: 20px;
 
     letter-spacing: 2px;
 
-    font-weight: bold;
+}
+
+/* BUTTON */
+
+.button {
+
+    margin-top: 30px;
+
+    padding: 12px 25px;
+
+    background: gold;
+
+    color: black;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    display: inline-block;
 
 }
 
 </style>
-
 </head>
-
 <body>
+    <!-- MENU -->
+  <div class="menu">
 
-<div class="hero"></div>
+  <a href="#about">About</a>
 
-<div class="logo">
+  <a href="#treatments">Treatments</a>
 
-    <img src="logo.png" alt="Pigmentica Logo">
+  <a href="#prices">Prices</a>
+
+  <a href="#contact">Contact</a>
+
+</div
+    <!-- HERO -->
+    <div class="hero">
+
+  <h1>PIGMENTICA</h1>
 
 </div>
+<!-- ABOUT -->
+    <div class="section" id="about">
 
-<div class="content">
+  <h2>About</h2>
 
-    <h1>PIGMENTICA</h1>
+  <p>Enhancing natural beauty through expert semi-permanent makeup treatments tailored to you.</p>
 
-    <div class="tagline">Semi-Permanent Makeup</div>
+</div>
+<!-- TREATMENTS -->
+    <div class="section" id="treatments">
 
-    <div class="desc">
+  <h2>Treatments</h2>
+    <div class="treatments">
 
-        Enhancing natural beauty. Empowering confidence.
+    <div class="card">
+
+      <img src="brows.jpg">
+
+      <span>BROWS</span>
 
     </div>
+    <div class="card">
 
-    <a class="button" href="https://wa.me/447550012000">
+  <img src="lips.jpg">
 
-        Book Appointment
-
-    </a>
-
-</div>
-
-<!-- SLIDER -->
-
-<div class="treatments">
-
-  <a href="brows.html" class="card">
-
-    <img src="brows.jpg">
-
-    <span>BROWS</span>
-
-  </a>
-
-  <a href="lips.html" class="card">
-
-    <img src="lips.jpg">
-
-    <span>LIPS</span>
-
-  </a>
-
-  <a href="eyes.html" class="card">
-
-    <img src="eyes.jpg">
-
-    <span>EYES</span>
-
-  </a>
+  <span>LIPS</span>
 
 </div>
 
+<div class="card">
+
+  <img src="eyes.jpg">
+
+  <span>EYES</span>
+
+</div>
+  </div>
+  </div>
+  <!-- PRICES -->
+    <div class="section" id="prices">
+
+  <h2>Prices</h2>
+
+  <p>Contact us for a full price list or consultation.</p>
+
+</div>
+<!-- CONTACT -->
+    <div class="section" id="contact">
+
+  <h2>Contact Us</h2>
+
+  <p>📞 0755 001 2000</p>
+
+  <a class="button" href="https://wa.me/447550012000">Book Now</a>
+
+</div>
 </body>
 
 </html>
