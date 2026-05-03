@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pigmentica</title>
 
-<!-- TESLA-STYLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
 <style>
 
 /* BASE */
@@ -19,13 +16,8 @@ body {
    scroll-behavior: smooth;
 }
 
-/* ✨ TESLA-STYLE METALLIC GOLD TEXT */
-.tesla-gold {
-   font-family: 'Orbitron', sans-serif;
-   letter-spacing: 8px;
-   font-size: 48px;
-   text-transform: uppercase;
-
+/* METALLIC GOLD TEXT */
+.gold-text {
    background: linear-gradient(
        90deg,
        #caa44a,
@@ -94,6 +86,11 @@ body::before {
    z-index: 2;
 }
 
+.hero h1 {
+   font-size: 48px;
+   letter-spacing: 4px;
+}
+
 /* SECTIONS */
 .section {
    padding: 80px 20px;
@@ -102,6 +99,17 @@ body::before {
    z-index: 2;
 }
 
+.section h2 {
+   margin-bottom: 20px;
+}
+
+.section p {
+   max-width: 500px;
+   margin: auto;
+   opacity: 0.85;
+}
+
+/* BUTTON */
 .button {
    margin-top: 20px;
    padding: 12px 25px;
@@ -117,33 +125,33 @@ body::before {
 <body>
 
 <div class="menu">
- <a href="#about" class="tesla-gold">About</a>
- <a href="#treatments" class="tesla-gold">Treatments</a>
- <a href="#prices" class="tesla-gold">Prices</a>
- <a href="#contact" class="tesla-gold">Contact</a>
+ <a href="#about" class="gold-text">About</a>
+ <a href="#treatments" class="gold-text">Treatments</a>
+ <a href="#prices" class="gold-text">Prices</a>
+ <a href="#contact" class="gold-text">Contact</a>
 </div>
 
 <div class="hero">
- <h1 class="tesla-gold">PIGMENTICA</h1>
+ <h1 class="gold-text">PIGMENTICA</h1>
 </div>
 
 <div class="section" id="about">
- <h2 class="tesla-gold">About</h2>
+ <h2 class="gold-text">About</h2>
  <p>Enhancing natural beauty through expert semi-permanent makeup.</p>
 </div>
 
 <div class="section" id="treatments">
- <h2 class="tesla-gold">Treatments</h2>
+ <h2 class="gold-text">Treatments</h2>
  <p>Brows • Lips • Eyeliner</p>
 </div>
 
 <div class="section" id="prices">
- <h2 class="tesla-gold">Prices</h2>
+ <h2 class="gold-text">Prices</h2>
  <p>Brows £250 | Lips £220 | Eyeliner £180</p>
 </div>
 
 <div class="section" id="contact">
- <h2 class="tesla-gold">Contact</h2>
+ <h2 class="gold-text">Contact</h2>
  <p>0755 001 2000</p>
  <a class="button" href="https://wa.me/447550012000">Book Now</a>
 </div>
