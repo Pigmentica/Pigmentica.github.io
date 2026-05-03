@@ -10,79 +10,90 @@
 /* BASE */
 body {
    margin: 0;
-   font-family: 'Georgia', serif;
+   font-family: 'Helvetica Neue', Arial, sans-serif;
    color: white;
    scroll-behavior: smooth;
 }
 
-/* 🎥 FULL PAGE VIDEO BACKGROUND */
+/* VIDEO BACKGROUND */
 .bg-video {
    position: fixed;
    top: 50%;
    left: 50%;
    min-width: 100%;
    min-height: 100%;
-   width: auto;
-   height: auto;
    transform: translate(-50%, -50%);
    object-fit: cover;
    z-index: -1;
-   filter: brightness(0.35) contrast(1.1);
+   filter: brightness(0.35);
 }
 
-/* CONTENT ABOVE VIDEO */
-.menu, .hero, .section {
-   position: relative;
-   z-index: 2;
+/* LOGO TOP RIGHT */
+.logo-top {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   z-index: 5;
 }
 
-/* METALLIC GOLD TEXT */
-.gold-text {
-   background: linear-gradient(
-       90deg,
-       #caa44a,
-       #ffd700,
-       #fff2b0,
-       #ffd700,
-       #caa44a
-   );
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-size: 200% auto;
-   animation: goldShine 4s linear infinite;
-
-   text-shadow:
-       0 0 5px rgba(255,215,0,0.3),
-       0 0 10px rgba(255,215,0,0.4),
-       0 0 20px rgba(255,215,0,0.5);
+.logo-top img {
+   width: 90px;
+   border-radius: 50%;
+   border: 2px solid rgba(255,215,0,0.6);
 }
 
-@keyframes goldShine {
-   0% { background-position: 0% center; }
-   100% { background-position: 200% center; }
-}
-
-/* MENU */
+/* MENU LEFT */
 .menu {
    position: fixed;
    top: 20px;
    left: 20px;
-   z-index: 3;
+   z-index: 5;
 }
 
 .menu a {
    display: block;
-   margin: 10px 0;
+   margin: 8px 0;
+   color: gold;
    text-decoration: none;
+   font-size: 13px;
+   letter-spacing: 2px;
 }
 
 /* HERO */
 .hero {
    height: 90vh;
    display: flex;
-   align-items: center;
+   flex-direction: column;
    justify-content: center;
-   text-align: center;
+   align-items: center;
+}
+
+/* BRAND TITLE */
+.brand {
+   font-size: 56px;
+   letter-spacing: 8px;
+   font-weight: 500;
+   color: gold;
+   text-transform: uppercase;
+}
+
+/* SUBTEXT */
+.tagline {
+   margin-top: 10px;
+   font-size: 18px;
+   opacity: 0.85;
+}
+
+/* BUTTON */
+.button {
+   margin-top: 30px;
+   padding: 14px 30px;
+   background: gold;
+   color: black;
+   border-radius: 30px;
+   text-decoration: none;
+   font-size: 14px;
+   letter-spacing: 1px;
 }
 
 /* SECTIONS */
@@ -91,20 +102,9 @@ body {
    text-align: center;
 }
 
-.section p {
-   max-width: 500px;
-   margin: auto;
-   opacity: 0.9;
-}
-
-/* BUTTON */
-.button {
-   margin-top: 20px;
-   padding: 12px 25px;
-   background: gold;
-   color: black;
-   border-radius: 30px;
-   text-decoration: none;
+.section h2 {
+   color: gold;
+   margin-bottom: 20px;
 }
 
 </style>
@@ -112,47 +112,53 @@ body {
 
 <body>
 
-<!-- GLOBAL VIDEO BACKGROUND -->
+<!-- VIDEO -->
 <video autoplay muted loop playsinline class="bg-video">
  <source src="background.mp4" type="video/mp4">
 </video>
 
+<!-- LOGO -->
+<div class="logo-top">
+ <img src="logo.png" alt="Pigmentica Logo">
+</div>
+
 <!-- MENU -->
 <div class="menu">
- <a href="#about" class="gold-text">About</a>
- <a href="#treatments" class="gold-text">Treatments</a>
- <a href="#prices" class="gold-text">Prices</a>
- <a href="#contact" class="gold-text">Contact</a>
+ <a href="#about">ABOUT</a>
+ <a href="#treatments">TREATMENTS</a>
+ <a href="#prices">PRICES</a>
+ <a href="#contact">CONTACT</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
- <h1 class="gold-text">PIGMENTICA</h1>
+ <div class="brand">PIGMENTICA</div>
+ <div class="tagline">Semi-Permanent Makeup</div>
+ <a class="button" href="https://wa.me/447550012000">BOOK APPOINTMENT</a>
 </div>
 
 <!-- ABOUT -->
 <div class="section" id="about">
- <h2 class="gold-text">About</h2>
- <p>Enhancing natural beauty through expert semi-permanent makeup.</p>
+ <h2>About</h2>
+ <p>Enhancing natural beauty through expert semi-permanent makeup treatments tailored to you.</p>
 </div>
 
 <!-- TREATMENTS -->
 <div class="section" id="treatments">
- <h2 class="gold-text">Treatments</h2>
+ <h2>Treatments</h2>
  <p>Brows • Lips • Eyeliner</p>
 </div>
 
 <!-- PRICES -->
 <div class="section" id="prices">
- <h2 class="gold-text">Prices</h2>
- <p>Brows £250 | Lips £220 | Eyeliner £180</p>
+ <h2>Prices</h2>
+ <p>Contact for full price list.</p>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
- <h2 class="gold-text">Contact</h2>
+ <h2>Contact</h2>
  <p>0755 001 2000</p>
- <a class="button" href="https://wa.me/447550012000">Book Now</a>
 </div>
 
 </body>
