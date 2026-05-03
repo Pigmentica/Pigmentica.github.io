@@ -1,365 +1,201 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Pigmentica</title>
 
 <style>
 
-/* ===== VIDEO BACKGROUND ===== */
-
+/* VIDEO BACKGROUND */
 .video-bg {
-
-    position: fixed;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: -2;
-
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: -2;
 }
-
-/* DARK OVERLAY (makes text readable) */
 
 .overlay {
-
-    position: fixed;
-
-    width: 100%;
-
-    height: 100%;
-
-    background: rgba(30, 0, 0, 0.6);
-
-    z-index: -1;
-
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background: rgba(30, 0, 0, 0.6);
+   z-index: -1;
 }
-
-/* ===== BODY ===== */
 
 body {
-
-    margin: 0;
-
-    font-family: 'Georgia', serif;
-
-    color: white;
-
+   margin: 0;
+   font-family: Georgia, serif;
+   color: white;
 }
 
-/* ===== BANNER ===== */
-
+/* BANNER */
 .banner {
-
-    width: 100%;
-
-    height: 250px;
-
-    background: url('banner.jpg') center/cover no-repeat;
-
+   width: 100%;
+   height: 250px;
+   background: url('banner.jpg') center/cover no-repeat;
 }
 
-/* ===== HEADER (LOGO + MENU) ===== */
-
+/* HEADER */
 .header {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 40px;
-
-    padding: 20px;
-
-    position: sticky;
-
-    top: 0;
-
-    background: rgba(60, 0, 0, 0.7);
-
-    backdrop-filter: blur(6px);
-
-    z-index: 10;
-
+   display: flex;
+   align-items: center;
+   gap: 40px;
+   padding: 20px;
+   position: sticky;
+   top: 0;
+   background: rgba(60, 0, 0, 0.7);
+   backdrop-filter: blur(6px);
 }
-
-/* LOGO LEFT */
 
 .logo img {
-
-    width: 80px;
-
-    border-radius: 50%;
-
+   width: 80px;
+   border-radius: 50%;
 }
-
-/* MENU NEXT TO LOGO */
 
 .menu a {
-
-    margin-right: 20px;
-
-    color: gold;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
+   margin-right: 20px;
+   color: gold;
+   text-decoration: none;
 }
 
-.menu a:hover {
-
-    opacity: 0.7;
-
-}
-
-/* ===== HERO ===== */
-
+/* HERO */
 .hero {
-
-    text-align: center;
-
-    padding: 60px 20px;
-
+   text-align: center;
+   padding: 60px 20px;
 }
 
 .hero h1 {
-
-    font-size: 48px;
-
-    letter-spacing: 4px;
-
-    background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-
-        0 0 10px rgba(212,175,55,0.6),
-
-        0 0 20px rgba(212,175,55,0.4);
-
+   font-size: 48px;
+   letter-spacing: 4px;
+   background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
-/* ===== SECTIONS ===== */
-
+/* SECTIONS */
 .section {
-
-    padding: 60px 20px;
-
-    text-align: center;
-
+   padding: 60px 20px;
+   text-align: center;
 }
 
 .section h2 {
-
-    color: gold;
-
+   color: gold;
 }
 
-/* ===== TREATMENTS ===== */
-
+/* TREATMENTS */
 .treatments {
-
-    display: flex;
-
-    overflow-x: auto;
-
-    gap: 20px;
-
-    padding: 20px;
-
+   display: flex;
+   overflow-x: auto;
+   gap: 20px;
+   padding: 20px;
 }
 
 .card {
-
-    min-width: 250px;
-
-    height: 320px;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    position: relative;
-
+   min-width: 260px;
+   border-radius: 20px;
+   overflow: hidden;
+   text-align: center;
 }
 
 .card img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
+   width: 100%;
+   height: auto;
+   border-radius: 20px;
 }
 
 .card span {
-
-    position: absolute;
-
-    bottom: 20px;
-
-    left: 20px;
-
+   display: block;
+   margin-top: 12px;
+   font-size: 18px;
+   letter-spacing: 2px;
+   color: gold;
 }
 
-/* ===== BUTTON ===== */
+.card:hover {
+   transform: translateY(-5px);
+   transition: 0.3s;
+}
 
+/* BUTTON */
 .button {
-
-    padding: 12px 25px;
-
-    background: gold;
-
-    color: black;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    display: inline-block;
-
+   padding: 12px 25px;
+   background: gold;
+   color: black;
+   border-radius: 30px;
+   text-decoration: none;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- VIDEO BACKGROUND -->
-
 <video autoplay muted loop playsinline class="video-bg">
-
-    <source src="background.mp4" type="video/mp4">
-
+   <source src="background.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<!-- TOP BANNER -->
-
 <div class="banner"></div>
 
-<!-- HEADER: LOGO + MENU -->
-
 <div class="header">
+   <div class="logo">
+       <img src="logo.png">
+   </div>
 
-    <div class="logo">
-
-        <img src="logo.png">
-
-    </div>
-
-    <div class="menu">
-
-        <a href="#about">About</a>
-
-        <a href="#treatments">Treatments</a>
-
-        <a href="#prices">Prices</a>
-
-        <a href="#contact">Contact</a>
-
-    </div>
-
+   <div class="menu">
+       <a href="#about">About</a>
+       <a href="#treatments">Treatments</a>
+       <a href="#prices">Prices</a>
+       <a href="#contact">Contact</a>
+   </div>
 </div>
-
-<!-- HERO -->
 
 <div class="hero">
-
-    <h1>PIGMENTICA</h1>
-
-    <p>Enhancing natural beauty. Empowering confidence.</p>
-
+   <h1>PIGMENTICA</h1>
+   <p>Enhancing natural beauty. Empowering confidence.</p>
 </div>
-
-<!-- ABOUT -->
 
 <div class="section" id="about">
-
-    <h2>About</h2>
-
-    <p>Expert semi-permanent makeup tailored to enhance your natural beauty.</p>
-
+   <h2>About</h2>
+   <p>Expert semi-permanent makeup tailored to enhance your natural beauty.</p>
 </div>
-
-<!-- TREATMENTS -->
 
 <div class="section" id="treatments">
+   <h2>Treatments</h2>
 
-    <h2>Treatments</h2>
+   <div class="treatments">
+       <a href="brows.html" class="card">
+           <img src="brows.jpg">
+           <span>BROWS</span>
+       </a>
 
-    <div class="treatments">
+       <a href="lips.html" class="card">
+           <img src="lips.jpg">
+           <span>LIPS</span>
+       </a>
 
-        <div class="card">
-
-            <img src="brows.jpg">
-
-            <span>BROWS</span>
-
-        </div>
-
-        <div class="card">
-
-            <img src="lips.jpg">
-
-            <span>LIPS</span>
-
-        </div>
-
-        <div class="card">
-
-            <img src="eyes.jpg">
-
-            <span>EYES</span>
-
-        </div>
-
-    </div>
-
+       <a href="eyes.html" class="card">
+           <img src="eyes.jpg">
+           <span>EYES</span>
+       </a>
+   </div>
 </div>
-
-<!-- PRICES -->
 
 <div class="section" id="prices">
-
-    <h2>Prices</h2>
-
-    <p>Contact us for pricing.</p>
-
+   <h2>Prices</h2>
+   <p>Contact us for pricing.</p>
 </div>
 
-<!-- CONTACT -->
-
 <div class="section" id="contact">
-
-    <h2>Contact</h2>
-
-    <p>📞 0755 001 2000</p>
-
-    <a class="button" href="https://wa.me/447550012000">Book Now</a>
-
+   <h2>Contact</h2>
+   <p>📞 0755 001 2000</p>
+   <a class="button" href="https://wa.me/447550012000">Book Now</a>
 </div>
 
 </body>
-
 </html>
