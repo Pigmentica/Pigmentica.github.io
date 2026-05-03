@@ -12,7 +12,43 @@
 
 <style>
 
-/* ===== BACKGROUND ===== */
+/* ===== VIDEO BACKGROUND ===== */
+
+.video-bg {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -2;
+
+}
+
+/* DARK OVERLAY (makes text readable) */
+
+.overlay {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(30, 0, 0, 0.6);
+
+    z-index: -1;
+
+}
+
+/* ===== BODY ===== */
 
 body {
 
@@ -22,79 +58,59 @@ body {
 
     color: white;
 
-    background: linear-gradient(135deg, #5a0c0c, #2b0000);
-
-    overflow-x: hidden;
-
 }
 
-/* GOLD DUST EFFECT */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    width: 200%;
-
-    height: 200%;
-
-    top: -50%;
-
-    left: -50%;
-
-    background:
-
-        radial-gradient(circle, rgba(255,215,0,0.12) 1px, transparent 2px);
-
-    background-size: 60px 60px;
-
-    animation: dustMove 40s linear infinite;
-
-    z-index: 0;
-
-}
-
-@keyframes dustMove {
-
-    from { transform: translate(0,0); }
-
-    to { transform: translate(200px,200px); }
-
-}
-
-/* ===== TOP BANNER ===== */
+/* ===== BANNER ===== */
 
 .banner {
 
     width: 100%;
 
-    height: 260px;
+    height: 250px;
 
     background: url('banner.jpg') center/cover no-repeat;
 
 }
 
-/* ===== MENU ===== */
+/* ===== HEADER (LOGO + MENU) ===== */
 
-.menu {
+.header {
 
-    position: fixed;
+    display: flex;
 
-    top: 20px;
+    align-items: center;
 
-    left: 20px;
+    gap: 40px;
+
+    padding: 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    background: rgba(60, 0, 0, 0.7);
+
+    backdrop-filter: blur(6px);
 
     z-index: 10;
 
 }
 
+/* LOGO LEFT */
+
+.logo img {
+
+    width: 80px;
+
+    border-radius: 50%;
+
+}
+
+/* MENU NEXT TO LOGO */
+
 .menu a {
 
-    display: block;
-
-    margin: 8px 0;
+    margin-right: 20px;
 
     color: gold;
 
@@ -104,35 +120,19 @@ body::before {
 
 }
 
-/* ===== LOGO TOP RIGHT ===== */
+.menu a:hover {
 
-.logo-top {
-
-    position: fixed;
-
-    top: 20px;
-
-    right: 20px;
-
-    z-index: 10;
+    opacity: 0.7;
 
 }
 
-.logo-top img {
-
-    width: 70px;
-
-    border-radius: 50%;
-
-}
-
-/* ===== MAIN TITLE ===== */
+/* ===== HERO ===== */
 
 .hero {
 
     text-align: center;
 
-    padding: 60px 20px 20px;
+    padding: 60px 20px;
 
 }
 
@@ -156,16 +156,6 @@ body::before {
 
 }
 
-/* TAGLINE */
-
-.tagline {
-
-    opacity: 0.8;
-
-    margin-top: 10px;
-
-}
-
 /* ===== SECTIONS ===== */
 
 .section {
@@ -173,10 +163,6 @@ body::before {
     padding: 60px 20px;
 
     text-align: center;
-
-    position: relative;
-
-    z-index: 2;
 
 }
 
@@ -232,15 +218,11 @@ body::before {
 
     left: 20px;
 
-    font-size: 20px;
-
 }
 
 /* ===== BUTTON ===== */
 
 .button {
-
-    margin-top: 20px;
 
     padding: 12px 25px;
 
@@ -262,39 +244,51 @@ body::before {
 
 <body>
 
-<!-- MENU -->
+<!-- VIDEO BACKGROUND -->
 
-<div class="menu">
+<video autoplay muted loop playsinline class="video-bg">
 
-  <a href="#about">About</a>
+    <source src="background.mp4" type="video/mp4">
 
-  <a href="#treatments">Treatments</a>
+</video>
 
-  <a href="#prices">Prices</a>
+<div class="overlay"></div>
 
-  <a href="#contact">Contact</a>
-
-</div>
-
-<!-- LOGO -->
-
-<div class="logo-top">
-
-  <img src="logo.png">
-
-</div>
-
-<!-- BANNER -->
+<!-- TOP BANNER -->
 
 <div class="banner"></div>
 
-<!-- TITLE -->
+<!-- HEADER: LOGO + MENU -->
+
+<div class="header">
+
+    <div class="logo">
+
+        <img src="logo.png">
+
+    </div>
+
+    <div class="menu">
+
+        <a href="#about">About</a>
+
+        <a href="#treatments">Treatments</a>
+
+        <a href="#prices">Prices</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+</div>
+
+<!-- HERO -->
 
 <div class="hero">
 
-  <h1>PIGMENTICA</h1>
+    <h1>PIGMENTICA</h1>
 
-  <div class="tagline">Enhancing natural beauty. Empowering confidence.</div>
+    <p>Enhancing natural beauty. Empowering confidence.</p>
 
 </div>
 
@@ -302,9 +296,9 @@ body::before {
 
 <div class="section" id="about">
 
-  <h2>About</h2>
+    <h2>About</h2>
 
-  <p>Expert semi-permanent makeup tailored to enhance your natural beauty.</p>
+    <p>Expert semi-permanent makeup tailored to enhance your natural beauty.</p>
 
 </div>
 
@@ -312,35 +306,35 @@ body::before {
 
 <div class="section" id="treatments">
 
-  <h2>Treatments</h2>
+    <h2>Treatments</h2>
 
-  <div class="treatments">
+    <div class="treatments">
 
-    <div class="card">
+        <div class="card">
 
-      <img src="brows.jpg">
+            <img src="brows.jpg">
 
-      <span>BROWS</span>
+            <span>BROWS</span>
+
+        </div>
+
+        <div class="card">
+
+            <img src="lips.jpg">
+
+            <span>LIPS</span>
+
+        </div>
+
+        <div class="card">
+
+            <img src="eyes.jpg">
+
+            <span>EYES</span>
+
+        </div>
 
     </div>
-
-    <div class="card">
-
-      <img src="lips.jpg">
-
-      <span>LIPS</span>
-
-    </div>
-
-    <div class="card">
-
-      <img src="eyes.jpg">
-
-      <span>EYES</span>
-
-    </div>
-
-  </div>
 
 </div>
 
@@ -348,9 +342,9 @@ body::before {
 
 <div class="section" id="prices">
 
-  <h2>Prices</h2>
+    <h2>Prices</h2>
 
-  <p>Contact us for pricing details.</p>
+    <p>Contact us for pricing.</p>
 
 </div>
 
@@ -358,11 +352,11 @@ body::before {
 
 <div class="section" id="contact">
 
-  <h2>Contact</h2>
+    <h2>Contact</h2>
 
-  <p>📞 0755 001 2000</p>
+    <p>📞 0755 001 2000</p>
 
-  <a class="button" href="https://wa.me/447550012000">Book Now</a>
+    <a class="button" href="https://wa.me/447550012000">Book Now</a>
 
 </div>
 
