@@ -13,6 +13,52 @@
 <title>Brows | Pigmentica</title>
 
 <style>
+   .hero-wrapper {
+
+   display: flex;
+
+   justify-content: space-between;
+
+   align-items: center;
+
+   padding: 40px 60px;
+
+}
+
+.hero-text {
+
+   max-width: 500px;
+
+}
+
+.hero-image {
+
+   width: 280px;
+
+   border-radius: 20px;
+
+   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+}
+   @media (max-width: 768px) {
+
+   .hero-wrapper {
+
+      flex-direction: column;
+
+      text-align: center;
+
+   }
+
+   .hero-image {
+
+      margin-top: 20px;
+
+      width: 80%;
+
+   }
+
+}
 
 /* VIDEO BACKGROUND */
 
@@ -285,3 +331,16 @@ body {
 </body>
 
 </html>
+<div class="hero-wrapper">
+
+   <div class="hero-text">
+
+      <h1>BROWS</h1>
+
+      <p>Natural. Defined. Beautiful.</p>
+
+   </div>
+
+   <img src="brows.jpg" class="hero-image">
+
+</div>
