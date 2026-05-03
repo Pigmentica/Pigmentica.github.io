@@ -40,23 +40,7 @@
    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
 
 }
-   .hero-wrapper {
 
-   display: flex;
-
-   justify-content: space-between;
-
-   align-items: center;
-
-   padding: 40px 60px;
-
-}
-
-.hero-text {
-
-   max-width: 500px;
-
-}
 /* FIRST media query */
 
 @media (max-width: 768px) {
@@ -323,11 +307,17 @@ body {
 
 <!-- HERO -->
 
-<div class="hero">
+<div class="hero-wrapper">
 
-   <h1>BROWS</h1>
+   <div class="hero-text">
 
-   <p>Natural. Defined. Beautiful.</p>
+      <h1>BROWS</h1>
+
+      <p>Natural. Defined. Beautiful.</p>
+
+   </div>
+
+   <img src="brows.jpg" class="hero-image">
 
 </div>
 
@@ -364,16 +354,3 @@ body {
 </body>
 
 </html>
-<div class="hero-wrapper">
-
-   <div class="hero-text">
-
-      <h1>BROWS</h1>
-
-      <p>Natural. Defined. Beautiful.</p>
-
-   </div>
-
-   <img src="brows.jpg" class="hero-image">
-
-</div>
