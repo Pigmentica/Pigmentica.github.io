@@ -1,165 +1,371 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pigmentica</title>
 
 <style>
 
-/* BASE */
+/* ===== BACKGROUND ===== */
+
 body {
-   margin: 0;
-   font-family: 'Helvetica Neue', Arial, sans-serif;
-   color: white;
-   scroll-behavior: smooth;
+
+    margin: 0;
+
+    font-family: 'Georgia', serif;
+
+    color: white;
+
+    background: linear-gradient(135deg, #5a0c0c, #2b0000);
+
+    overflow-x: hidden;
+
 }
 
-/* VIDEO BACKGROUND */
-.bg-video {
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   min-width: 100%;
-   min-height: 100%;
-   transform: translate(-50%, -50%);
-   object-fit: cover;
-   z-index: -1;
-   filter: brightness(0.35);
+/* GOLD DUST EFFECT */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 200%;
+
+    height: 200%;
+
+    top: -50%;
+
+    left: -50%;
+
+    background:
+
+        radial-gradient(circle, rgba(255,215,0,0.12) 1px, transparent 2px);
+
+    background-size: 60px 60px;
+
+    animation: dustMove 40s linear infinite;
+
+    z-index: 0;
+
 }
 
-/* LOGO TOP RIGHT */
-.logo-top {
-   position: fixed;
-   top: 20px;
-   right: 20px;
-   z-index: 5;
+@keyframes dustMove {
+
+    from { transform: translate(0,0); }
+
+    to { transform: translate(200px,200px); }
+
 }
 
-.logo-top img {
-   width: 90px;
-   border-radius: 50%;
-   border: 2px solid rgba(255,215,0,0.6);
+/* ===== TOP BANNER ===== */
+
+.banner {
+
+    width: 100%;
+
+    height: 260px;
+
+    background: url('banner.jpg') center/cover no-repeat;
+
 }
 
-/* MENU LEFT */
+/* ===== MENU ===== */
+
 .menu {
-   position: fixed;
-   top: 20px;
-   left: 20px;
-   z-index: 5;
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 10;
+
 }
 
 .menu a {
-   display: block;
-   margin: 8px 0;
-   color: gold;
-   text-decoration: none;
-   font-size: 13px;
-   letter-spacing: 2px;
+
+    display: block;
+
+    margin: 8px 0;
+
+    color: gold;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
 }
 
-/* HERO */
+/* ===== LOGO TOP RIGHT ===== */
+
+.logo-top {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    z-index: 10;
+
+}
+
+.logo-top img {
+
+    width: 70px;
+
+    border-radius: 50%;
+
+}
+
+/* ===== MAIN TITLE ===== */
+
 .hero {
-   height: 90vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px 20px;
+
 }
 
-/* BRAND TITLE */
-.brand {
-   font-size: 56px;
-   letter-spacing: 8px;
-   font-weight: 500;
-   color: gold;
-   text-transform: uppercase;
+.hero h1 {
+
+    font-size: 48px;
+
+    letter-spacing: 4px;
+
+    background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+
+        0 0 10px rgba(212,175,55,0.6),
+
+        0 0 20px rgba(212,175,55,0.4);
+
 }
 
-/* SUBTEXT */
+/* TAGLINE */
+
 .tagline {
-   margin-top: 10px;
-   font-size: 18px;
-   opacity: 0.85;
+
+    opacity: 0.8;
+
+    margin-top: 10px;
+
 }
 
-/* BUTTON */
-.button {
-   margin-top: 30px;
-   padding: 14px 30px;
-   background: gold;
-   color: black;
-   border-radius: 30px;
-   text-decoration: none;
-   font-size: 14px;
-   letter-spacing: 1px;
-}
+/* ===== SECTIONS ===== */
 
-/* SECTIONS */
 .section {
-   padding: 80px 20px;
-   text-align: center;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
 }
 
 .section h2 {
-   color: gold;
-   margin-bottom: 20px;
+
+    color: gold;
+
+}
+
+/* ===== TREATMENTS ===== */
+
+.treatments {
+
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 20px;
+
+    padding: 20px;
+
+}
+
+.card {
+
+    min-width: 250px;
+
+    height: 320px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.card span {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 20px;
+
+    font-size: 20px;
+
+}
+
+/* ===== BUTTON ===== */
+
+.button {
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    background: gold;
+
+    color: black;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    display: inline-block;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- VIDEO -->
-<video autoplay muted loop playsinline class="bg-video">
- <source src="background.mp4" type="video/mp4">
-</video>
+<!-- MENU -->
+
+<div class="menu">
+
+  <a href="#about">About</a>
+
+  <a href="#treatments">Treatments</a>
+
+  <a href="#prices">Prices</a>
+
+  <a href="#contact">Contact</a>
+
+</div>
 
 <!-- LOGO -->
+
 <div class="logo-top">
- <img src="logo.png" alt="Pigmentica Logo">
+
+  <img src="logo.png">
+
 </div>
 
-<!-- MENU -->
-<div class="menu">
- <a href="#about">ABOUT</a>
- <a href="#treatments">TREATMENTS</a>
- <a href="#prices">PRICES</a>
- <a href="#contact">CONTACT</a>
-</div>
+<!-- BANNER -->
 
-<!-- HERO -->
+<div class="banner"></div>
+
+<!-- TITLE -->
+
 <div class="hero">
- <div class="brand">PIGMENTICA</div>
- <div class="tagline">Semi-Permanent Makeup</div>
- <a class="button" href="https://wa.me/447550012000">BOOK APPOINTMENT</a>
+
+  <h1>PIGMENTICA</h1>
+
+  <div class="tagline">Enhancing natural beauty. Empowering confidence.</div>
+
 </div>
 
 <!-- ABOUT -->
+
 <div class="section" id="about">
- <h2>About</h2>
- <p>Enhancing natural beauty through expert semi-permanent makeup treatments tailored to you.</p>
+
+  <h2>About</h2>
+
+  <p>Expert semi-permanent makeup tailored to enhance your natural beauty.</p>
+
 </div>
 
 <!-- TREATMENTS -->
+
 <div class="section" id="treatments">
- <h2>Treatments</h2>
- <p>Brows • Lips • Eyeliner</p>
+
+  <h2>Treatments</h2>
+
+  <div class="treatments">
+
+    <div class="card">
+
+      <img src="brows.jpg">
+
+      <span>BROWS</span>
+
+    </div>
+
+    <div class="card">
+
+      <img src="lips.jpg">
+
+      <span>LIPS</span>
+
+    </div>
+
+    <div class="card">
+
+      <img src="eyes.jpg">
+
+      <span>EYES</span>
+
+    </div>
+
+  </div>
+
 </div>
 
 <!-- PRICES -->
+
 <div class="section" id="prices">
- <h2>Prices</h2>
- <p>Contact for full price list.</p>
+
+  <h2>Prices</h2>
+
+  <p>Contact us for pricing details.</p>
+
 </div>
 
 <!-- CONTACT -->
+
 <div class="section" id="contact">
- <h2>Contact</h2>
- <p>0755 001 2000</p>
+
+  <h2>Contact</h2>
+
+  <p>📞 0755 001 2000</p>
+
+  <a class="button" href="https://wa.me/447550012000">Book Now</a>
+
 </div>
 
 </body>
+
 </html>
