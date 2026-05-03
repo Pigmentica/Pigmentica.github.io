@@ -80,6 +80,8 @@ body {
 
    backdrop-filter: blur(6px);
 
+   z-index: 5;
+
 }
 
 .logo img {
@@ -100,21 +102,19 @@ body {
 
 }
 
-/* HERO SECTION */
+/* HERO TEXT */
 
 .hero-wrapper {
 
    display: flex;
 
-   justify-content: space-between;
+   justify-content: center;
 
    align-items: center;
 
-   padding: 60px 80px;
+   padding: 100px 20px 60px;
 
-   max-width: 1100px;
-
-   margin: auto;
+   text-align: center;
 
 }
 
@@ -142,13 +142,25 @@ body {
 
 }
 
+/* FLOATING IMAGE (TOP RIGHT) */
+
 .hero-image {
 
-   width: 300px;
+   position: fixed;
+
+   top: 20px;
+
+   right: 20px;
+
+   width: 160px;
+
+   z-index: 10;
 
    border-radius: 20px;
 
-   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+
+   transform: rotate(2deg);
 
 }
 
@@ -208,21 +220,17 @@ body {
 
 @media (max-width: 768px) {
 
-   .hero-wrapper {
-
-      flex-direction: column;
-
-      text-align: center;
-
-      padding: 40px 20px;
-
-   }
-
    .hero-image {
 
-      margin-top: 25px;
+      position: static;
 
-      width: 80%;
+      width: 70%;
+
+      margin: 20px auto;
+
+      display: block;
+
+      transform: none;
 
    }
 
@@ -268,6 +276,10 @@ body {
 
 </div>
 
+<!-- FLOATING IMAGE -->
+
+<img src="brows.jpg" class="hero-image">
+
 <!-- HERO -->
 
 <div class="hero-wrapper">
@@ -279,8 +291,6 @@ body {
       <p>Natural. Defined. Beautiful.</p>
 
    </div>
-
-   <img src="brows.jpg" class="hero-image">
 
 </div>
 
