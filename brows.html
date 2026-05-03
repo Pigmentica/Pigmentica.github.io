@@ -40,7 +40,40 @@
    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
 
 }
-   @media (max-width: 768px) {
+   .hero-wrapper {
+
+   display: flex;
+
+   justify-content: space-between;
+
+   align-items: center;
+
+   padding: 40px 60px;
+
+}
+
+.hero-text {
+
+   max-width: 500px;
+
+}
+/* FIRST media query */
+
+@media (max-width: 768px) {
+
+   .about-container {
+
+      flex-direction: column;
+
+      text-align: center;
+
+   }
+
+}
+
+/* SECOND media query (your hero fix) */
+
+@media (max-width: 768px) {
 
    .hero-wrapper {
 
@@ -59,7 +92,7 @@
    }
 
 }
-
+   
 /* VIDEO BACKGROUND */
 
 .video-bg {
