@@ -12,40 +12,16 @@ body {
    margin: 0;
    font-family: 'Georgia', serif;
    color: white;
-   background: radial-gradient(circle at top, #6a0d0d, #1a0000);
+   background: #1a0000;
    scroll-behavior: smooth;
 }
 
-/* ✨ LUXURY GOLD DUST BACKGROUND */
-body::before {
-   content: "";
-   position: fixed;
-   width: 200%;
-   height: 200%;
-   top: -50%;
-   left: -50%;
-   background:
-       radial-gradient(circle, rgba(255,215,0,0.18) 2px, transparent 3px),
-       radial-gradient(circle, rgba(255,215,0,0.12) 2px, transparent 3px),
-       radial-gradient(circle, rgba(255,215,0,0.1) 2px, transparent 3px);
-   background-size: 250px 250px;
-   animation: floatDust 35s linear infinite;
-   z-index: 0;
-   pointer-events: none;
-}
-
-@keyframes floatDust {
-   0% { transform: translate(0,0); }
-   50% { transform: translate(-100px, 150px); }
-   100% { transform: translate(100px, 300px); }
-}
-
-/* MENU (TOP LEFT) */
+/* MENU */
 .menu {
    position: fixed;
    top: 20px;
    left: 20px;
-   z-index: 3;
+   z-index: 5;
 }
 
 .menu a {
@@ -57,37 +33,55 @@ body::before {
    letter-spacing: 1px;
 }
 
-.menu a:hover {
-   opacity: 0.7;
-}
-
 /* HERO */
 .hero {
-   height: 90vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
+   position: relative;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.bg-video {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 120%;
+   height: 120%;
+   object-fit: cover;
+   transform: translate(-50%, -50%);
+   z-index: 0;
+}
+
+.hero::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background: rgba(30, 0, 0, 0.55);
+   z-index: 1;
+}
+
+.hero-content {
    position: relative;
    z-index: 2;
+   text-align: center;
+   top: 50%;
+   transform: translateY(-50%);
 }
 
 .hero h1 {
-   font-size: 48px;
-   letter-spacing: 4px;
+   font-size: 52px;
+   letter-spacing: 5px;
+   color: gold;
 }
 
 /* SECTIONS */
 .section {
    padding: 80px 20px;
    text-align: center;
-   position: relative;
-   z-index: 2;
+   background: #1a0000;
 }
 
 .section h2 {
    color: gold;
-   margin-bottom: 20px;
 }
 
 .section p {
@@ -96,47 +90,14 @@ body::before {
    opacity: 0.85;
 }
 
-/* TREATMENTS SLIDER */
-.treatments {
-   display: flex;
-   overflow-x: auto;
-   gap: 20px;
-   padding: 20px;
-}
-
-.card {
-   min-width: 250px;
-   height: 320px;
-   border-radius: 20px;
-   overflow: hidden;
-   position: relative;
-   flex-shrink: 0;
-}
-
-.card img {
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-}
-
-.card span {
-   position: absolute;
-   bottom: 20px;
-   left: 20px;
-   color: white;
-   font-size: 20px;
-   letter-spacing: 2px;
-}
-
 /* BUTTON */
 .button {
-   margin-top: 30px;
+   margin-top: 20px;
    padding: 12px 25px;
    background: gold;
    color: black;
    border-radius: 30px;
    text-decoration: none;
-   display: inline-block;
 }
 
 </style>
@@ -152,7 +113,13 @@ body::before {
 </div>
 
 <div class="hero">
- <h1>PIGMENTICA</h1>
+ <video autoplay muted loop playsinline class="bg-video">
+   <source src="background.mp4" type="video/mp4">
+ </video>
+
+ <div class="hero-content">
+   <h1>PIGMENTICA</h1>
+ </div>
 </div>
 
 <div class="section" id="about">
@@ -162,29 +129,16 @@ body::before {
 
 <div class="section" id="treatments">
  <h2>Treatments</h2>
- <div class="treatments">
-   <div class="card">
-     <img src="brows.jpg" alt="Brows">
-     <span>BROWS</span>
-   </div>
-   <div class="card">
-     <img src="lips.jpg" alt="Lips">
-     <span>LIPS</span>
-   </div>
-   <div class="card">
-     <img src="eyes.jpg" alt="Eyes">
-     <span>EYES</span>
-   </div>
- </div>
+ <p>Brows • Lips • Eyeliner</p>
 </div>
 
 <div class="section" id="prices">
  <h2>Prices</h2>
- <p>Contact us for a full price list or consultation.</p>
+ <p>Contact us for full pricing.</p>
 </div>
 
 <div class="section" id="contact">
- <h2>Contact Us</h2>
+ <h2>Contact</h2>
  <p>📞 0755 001 2000</p>
  <a class="button" href="https://wa.me/447550012000">Book Now</a>
 </div>
