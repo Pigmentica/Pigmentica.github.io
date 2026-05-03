@@ -13,71 +13,8 @@
 <title>Brows | Pigmentica</title>
 
 <style>
-   .hero-wrapper {
 
-   display: flex;
-
-   justify-content: space-between;
-
-   align-items: center;
-
-   padding: 40px 60px;
-
-}
-
-.hero-text {
-
-   max-width: 500px;
-
-}
-
-.hero-image {
-
-   width: 280px;
-
-   border-radius: 20px;
-
-   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-
-}
-
-/* FIRST media query */
-
-@media (max-width: 768px) {
-
-   .about-container {
-
-      flex-direction: column;
-
-      text-align: center;
-
-   }
-
-}
-
-/* SECOND media query (your hero fix) */
-
-@media (max-width: 768px) {
-
-   .hero-wrapper {
-
-      flex-direction: column;
-
-      text-align: center;
-
-   }
-
-   .hero-image {
-
-      margin-top: 20px;
-
-      width: 80%;
-
-   }
-
-}
-   
-/* VIDEO BACKGROUND */
+/* BACKGROUND */
 
 .video-bg {
 
@@ -163,39 +100,59 @@ body {
 
 }
 
-/* HERO TITLE */
+/* HERO SECTION */
 
-.hero {
+.hero-wrapper {
 
-   text-align: center;
+   display: flex;
 
-   padding: 60px 20px 30px;
+   justify-content: space-between;
+
+   align-items: center;
+
+   padding: 60px 80px;
+
+   max-width: 1100px;
+
+   margin: auto;
 
 }
 
-.hero h1 {
+.hero-text h1 {
 
-   font-size: 42px;
+   font-size: 48px;
 
    letter-spacing: 4px;
 
    color: gold;
 
+   margin: 0;
+
 }
 
-.hero p {
+.hero-text p {
 
    font-family: 'Nothing You Could Do', cursive;
 
    font-size: 32px;
 
-   margin-top: 10px;
+   margin-top: 15px;
 
    color: #f5e6c8;
 
 }
 
-/* CONTENT SECTION */
+.hero-image {
+
+   width: 300px;
+
+   border-radius: 20px;
+
+   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+}
+
+/* CONTENT */
 
 .section {
 
@@ -203,7 +160,7 @@ body {
 
    text-align: center;
 
-   max-width: 900px;
+   max-width: 800px;
 
    margin: auto;
 
@@ -227,24 +184,6 @@ body {
 
 }
 
-/* IMAGE */
-
-.treatment-image {
-
-   width: 100%;
-
-   max-width: 400px;
-
-   border-radius: 20px;
-
-   margin: 30px auto;
-
-   display: block;
-
-   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-
-}
-
 /* BUTTON */
 
 .button {
@@ -262,6 +201,30 @@ body {
    display: inline-block;
 
    margin-top: 20px;
+
+}
+
+/* MOBILE FIX */
+
+@media (max-width: 768px) {
+
+   .hero-wrapper {
+
+      flex-direction: column;
+
+      text-align: center;
+
+      padding: 40px 20px;
+
+   }
+
+   .hero-image {
+
+      margin-top: 25px;
+
+      width: 80%;
+
+   }
 
 }
 
@@ -324,8 +287,6 @@ body {
 <!-- CONTENT -->
 
 <div class="section">
-
-   <img src="brows.jpg" class="treatment-image">
 
    <h2>SPMU Brows</h2>
 
