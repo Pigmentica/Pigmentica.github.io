@@ -1,606 +1,338 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pigmentica</title>
 
 <style>
- .about-container {
 
-  display: flex;
+body {
 
-  align-items: center;
+ margin: 0;
 
-  justify-content: center;
+ font-family: Georgia, serif;
 
-  gap: 60px;
-
-  max-width: 1100px;
-
-  margin: auto;
-
-  flex-wrap: wrap;
+ color: white;
 
 }
 
-.about-image {
+/* BACKGROUND */
 
-  flex: 1;
+.video-bg {
 
-  text-align: center;
+ position: fixed;
+
+ top: 0;
+
+ left: 0;
+
+ width: 100%;
+
+ height: 100%;
+
+ object-fit: cover;
+
+ z-index: -2;
+
+}
+
+.overlay {
+
+ position: fixed;
+
+ width: 100%;
+
+ height: 100%;
+
+ background: rgba(30, 0, 0, 0.35);
+
+ z-index: -1;
+
+}
+
+/* HEADER */
+
+.header {
+
+ display: flex;
+
+ align-items: center;
+
+ gap: 40px;
+
+ padding: 20px;
+
+ position: sticky;
+
+ top: 0;
+
+ background: rgba(60, 0, 0, 0.7);
+
+ backdrop-filter: blur(6px);
+
+}
+
+.menu a {
+
+ margin-right: 20px;
+
+ color: gold;
+
+ text-decoration: none;
+
+}
+
+.consult-btn {
+
+ padding: 10px 22px;
+
+ background: transparent;
+
+ color: gold;
+
+ border: 2px solid gold;
+
+ border-radius: 30px;
+
+ text-decoration: none;
+
+ font-weight: bold;
+
+}
+
+/* HERO */
+
+.hero {
+
+ text-align: center;
+
+ padding: 30px 20px 20px;
+
+}
+
+.hero h1 {
+
+ font-size: 48px;
+
+ letter-spacing: 4px;
+
+ background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
+
+ -webkit-background-clip: text;
+
+ -webkit-text-fill-color: transparent;
+
+}
+
+.hero-tagline {
+
+ font-family: 'Nothing You Could Do', cursive;
+
+ font-size: 36px;
+
+ color: #f5e6c8;
+
+ margin-top: 10px;
+
+}
+
+/* SECTIONS */
+
+.section {
+
+ padding: 40px 20px;
+
+ text-align: center;
+
+}
+
+.section h2 {
+
+ color: gold;
+
+}
+
+/* TREATMENTS */
+
+.treatments {
+
+ display: flex;
+
+ gap: 20px;
+
+ overflow-x: auto;
+
+ padding: 20px;
+
+}
+
+.card img {
+
+ width: 260px;
+
+ border-radius: 20px;
+
+}
+
+/* ABOUT */
+
+.about-container {
+
+ display: flex;
+
+ gap: 40px;
+
+ max-width: 1000px;
+
+ margin: auto;
+
+ flex-wrap: wrap;
 
 }
 
 .about-image img {
 
-  width: 100%;
+ width: 100%;
 
-  max-width: 350px;
+ max-width: 350px;
 
-  border-radius: 20px;
-
-  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+ border-radius: 20px;
 
 }
 
 .about-text {
 
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center; /* vertically centre text block */
+ max-width: 500px;
 
 }
 
-.about-text h2 {
+/* FOOTER */
 
-  color: gold;
+.footer {
 
-  margin-bottom: 20px;
+ background: rgba(20, 0, 0, 0.9);
 
-}
+ padding: 50px 20px 20px;
 
-.about-text p {
-
-  margin-bottom: 15px;
-
-  line-height: 1.6;
-
-  opacity: 0.9;
-
-}
-
-.about-text strong {
-
-  color: gold;
-
-}
-   .section p {
-
-    max-width: 700px;
-
-    margin: 15px auto;
-
-    line-height: 1.6;
-
-    font-size: 16px;
-
-    opacity: 0.9;
-
-}
- .section h2 {
-
-  text-align: center;
-
-  width: 100%;
-
-}
-
-.section strong {
-
-    color: gold;
-
-    letter-spacing: 1px;
-
-}
- .button {
-
-  display: block;
-
-  width: fit-content;
-
-  margin: 30px auto 0; /* THIS centers it */
-
-  padding: 12px 25px;
-
-  background: gold;
-
-  color: black;
-
-  border-radius: 30px;
-
-  text-decoration: none;
-
-  text-align: center;
-
-}
- .consult-btn {
-
-   margin-left: 20px;
-
-   padding: 10px 22px;
-
-   background: transparent;              /* no fill */
-
-   color: gold;                          /* gold text */
-
-   border: 2px solid gold;               /* gold frame */
-
-   border-radius: 30px;
-
-   text-decoration: none;
-
-   font-weight: bold;
-
-   letter-spacing: 0.5px;
-
-   transition: all 0.3s ease;
-
-}
-
-.consult-btn:hover {
-
-   background: rgba(212, 175, 55, 0.1);  /* soft gold glow */
-
-   color: #fff3b0;                       /* lighter gold text */
-
-   border-color: #fff3b0;
-
-}
- .footer {
-
-  background: rgba(20, 0, 0, 0.9);
-
-  padding: 50px 20px 20px;
-
-  margin-top: 60px;
+ margin-top: 60px;
 
 }
 
 .footer-container {
 
-  display: flex;
+ display: flex;
 
-  justify-content: space-between;
+ justify-content: space-between;
 
-  max-width: 1000px;
+ max-width: 1000px;
 
-  margin: auto;
+ margin: auto;
 
-  flex-wrap: wrap;
+ flex-wrap: wrap;
 
-  gap: 40px;
-
-}
-
-.footer-col h3 {
-
-  color: gold;
-
-  margin-bottom: 15px;
+ gap: 40px;
 
 }
 
-.footer-col p {
+.footer h3 {
 
-  margin: 5px 0;
-
-  opacity: 0.8;
+ color: gold;
 
 }
+
+.footer a {
+
+ color: gold;
+
+ text-decoration: none;
+
+}
+
+/* SOCIALS */
 
 .socials {
 
-  display: flex;
+ display: flex;
 
-  gap: 12px; /* space between icons */
+ gap: 12px;
+
+ margin-top: 10px;
 
 }
 
 .socials img {
 
-  width: 24px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
+ width: 24px;
 
 }
 
-.socials img:hover {
+/* QR */
 
-  opacity: 0.7;
+.qr-section {
+
+ margin-top: 25px;
+
+ display: flex;
+
+ justify-content: center;
 
 }
+
+.qr-code {
+
+ width: 160px;
+
+ height: 160px;
+
+ object-fit: contain;
+
+ background: white;
+
+ padding: 10px;
+
+ border-radius: 12px;
+
+}
+
+/* COPYRIGHT */
 
 .footer-bottom {
 
-  text-align: center;
+ text-align: center;
 
-  margin-top: 30px;
+ margin-top: 30px;
 
-  opacity: 0.6;
+ opacity: 0.6;
 
-  font-size: 14px;
-
-}
- .qr-section {
-
-  margin-top: 15px;
-
-  text-align: center;
+ font-size: 14px;
 
 }
 
-.qr-code {
-
-  width: 120px;
-
-  border-radius: 12px;
-
-  margin-top: 10px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-
-}
-
-.qr-code:hover {
-
-  transform: scale(1.05);
-
-  transition: 0.3s;
-
-}
- .qr-code {
-
-  width: 180px;        /* controls size */
-
-  height: 180px;       /* force square */
-
-  object-fit: contain; /* prevents stretching */
-
-  border-radius: 12px; /* optional: softer look */
-
-  margin-top: 20px;
-
-}
- @media (max-width: 768px) {
-
-  .about-container {
-
-    flex-direction: column;
-
-    text-align: center;
-
-  }
-
-  .about-text {
-
-    align-items: center;
-
-    text-align: center;
-
-  }
-
-}
-
- .about-text {
-
-  flex: 1;
-
-  max-width: 500px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: flex-start; /* keeps text to the right side */
-
-  text-align: left;
-
-}
- .section {
-
-   background: transparent;
-
-}
-
-/* VIDEO BACKGROUND */
-.video-bg {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   z-index: -2;
-}
-
-.overlay {
-   position: fixed;
-   width: 100%;
-   height: 100%;
-   background: rgba(30, 0, 0, 0.35);
-   z-index: -1;
-}
-
-body {
-   margin: 0;
-   font-family: Georgia, serif;
-   color: white;
-}
-
-/* BANNER */
-.banner {
-   width: 100%;
-   height: 250px;
-   background: url('banner.jpg') center/cover no-repeat;
-}
-
-/* HEADER */
-.header {
-   display: flex;
-   align-items: center;
-   gap: 40px;
-   padding: 20px;
-   position: sticky;
-   top: 0;
-   background: rgba(60, 0, 0, 0.7);
-   backdrop-filter: blur(6px);
-}
-
-.logo img {
-   width: 80px;
-   border-radius: 50%;
-}
-
-.menu a {
-   margin-right: 20px;
-   color: gold;
-   text-decoration: none;
-}
-
-/* HERO */
-.hero {
-
-   text-align: center;
-
-   padding: 30px 20px 20px; /* reduced top & bottom */
-
-}
- .hero h1 {
-
-   margin-bottom: 10px;
-
-}
-
-.hero-tagline {
-
-   margin-top: 5px;
-
-}
-
-.hero h1 {
- font-size: 48px;
-
-   letter-spacing: 4px;
-
-   background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
-
-   -webkit-background-clip: text;
-
-   -webkit-text-fill-color: transparent;
-
-}
-.hero-tagline {
-
-   font-family: 'Nothing You Could Do', cursive;
-
-   font-size: 36px;
-
-   color: #f5e6c8;
-
-   margin-top: 15px;
-
-   display: inline-block;
-
-   overflow: hidden;
-
-   /* animation */
-
-   animation: handwriting 3s ease forwards;
-
-}
- .qr-section {
-
-   margin-top: 30px;
-
-   text-align: center;
-
-}
-
-.qr-code {
-
-   width: 180px;      /* increase size */
-
-   height: 180px;
-
-   border-radius: 12px;
-
-   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-   transition: 0.3s;
-
-}
-
-.qr-code:hover {
-
-   transform: scale(1.05);
-
-}
- @keyframes handwriting {
-
-   0% {
-
-      clip-path: inset(0 100% 0 0);
-
-      opacity: 0;
-
-   }
-
-   100% {
-
-      clip-path: inset(0 0 0 0);
-
-      opacity: 1;
-
-   }
- }
-
-/* SECTIONS */
-.section {
-
-   padding: 40px 20px; /* tighter */
-
-}
- #treatments h2 {
-
-   margin-top: 10px;
-
-}
-
-.section h2 {
-   color: gold;
-}
-
-/* TREATMENTS */
-.treatments {
-   display: flex;
-   overflow-x: auto;
-   gap: 20px;
-   padding: 20px;
-}
-
-.card {
-   min-width: 260px;
-   border-radius: 20px;
-   overflow: hidden;
-   text-align: center;
-}
-
-.card img {
-   width: 100%;
-   height: auto;
-   border-radius: 20px;
-}
-
-.card span {
-   display: block;
-   margin-top: 12px;
-   font-size: 18px;
-   letter-spacing: 2px;
-   color: gold;
-}
-
-.card:hover {
-   transform: translateY(-5px);
-   transition: 0.3s;
-}
-
-/* BUTTON */
-.button {
-   padding: 12px 25px;
-   background: gold;
-   color: black;
-   border-radius: 30px;
-   text-decoration: none;
-}
-   /* CONTACT LAYOUT FIX */
-
-.contact-line {
-
-   display: flex;
-
-   align-items: center;
-
-   justify-content: center;
-
-   gap: 10px;
-
-   margin: 10px 0;
-
-   color: gold;
-
-   text-decoration: none;
-
-   font-size: 18px;
-
-}
-/* INSTAGRAM LINK */
-
-.insta-link {
-
-   display: inline-flex;
-
-   align-items: center;
-
-   gap: 10px;
-
-   color: gold;
-
-   text-decoration: none;
-
-   font-size: 18px;
-
-   margin-top: 15px;
-
-}
-
-.insta-link:hover {
-
-   opacity: 0.7;
-
-}
-
-.insta-icon {
-
-   width: 22px;
-}
-
-  
 </style>
+
 </head>
 
 <body>
 
 <video autoplay muted loop playsinline class="video-bg">
-   <source src="background.mp4" type="video/mp4">
+
+ <source src="background.mp4" type="video/mp4">
+
 </video>
 
 <div class="overlay"></div>
 
-<div class="banner"></div>
-
 <div class="header">
-   <div class="logo">
-       <img src="logo.png">
-   </div>
-   <div class="menu">
+
+ <div class="menu">
 
    <a href="#about">About</a>
 
@@ -612,86 +344,51 @@ body {
 
    <a href="https://wa.me/447550012000" class="consult-btn">
 
-      Book Free Consultation
+     Book Free Consultation
 
    </a>
 
-</div>
+ </div>
+
 </div>
 
 <div class="hero">
 
-   <h1>PIGMENTICA</h1>
+ <h1>PIGMENTICA</h1>
 
-   <p class="hero-tagline">Wake up confident every day!</p>
+ <p class="hero-tagline">Wake up confident every day!</p>
 
 </div>
 
 <div class="section" id="treatments">
-   <h2>Choose Your Treatment</h2>
 
-   <div class="treatments">
-       <a href="brows.html" class="card">
-           <img src="brows.jpg">
-       </a>
+ <h2>Choose Your Treatment</h2>
 
-       <a href="lips.html" class="card">
-           <img src="lips.jpg">
-       </a>
+ <div class="treatments">
 
-       <a href="eyes.html" class="card">
-           <img src="eyes.jpg">
-       </a>
-   </div>
+   <a href="brows.html"><img src="brows.jpg"></a>
+
+   <a href="lips.html"><img src="lips.jpg"></a>
+
+   <a href="eyes.html"><img src="eyes.jpg"></a>
+
+ </div>
+
 </div>
- <div class="section about-section" id="about">
 
-  <div class="about-container">
+<div class="section" id="about">
 
-    <div class="about-image">
+ <h2>About Pigmentica</h2>
 
-      <img src="about.jpg" alt="Pigmentica Artist">
+ <p>Luxury semi-permanent makeup designed to enhance natural beauty.</p>
 
-    </div>
-
-    <div class="about-text">
-
-      <h2>About Pigmentica</h2>
-
-      <p>
-
-      At Pigmentica, semi-permanent makeup is approached as a refined art — where precision, elegance, and individuality come together to enhance your natural beauty.
-
-      </p>
-
-      <p><strong>Passion</strong><br>
-
-      Driven by a deep passion for beauty and artistry, each treatment is performed with meticulous care and an eye for perfection.
-
-      </p>
-
-      <p><strong>Vision</strong><br>
-
-      To redefine modern beauty through soft, natural enhancements that elevate confidence.
-
-      </p>
-
-      <p><strong>Mission</strong><br>
-
-      To deliver personalised, high-end results using advanced techniques and premium pigments.
-       </p>
-
-    </div>
-
-  </div>
-
-</div> <!-- closes about section -->
+</div>
 
 <div class="section" id="prices">
 
-   <h2>Prices</h2>
+ <h2>Prices</h2>
 
-   <p>Contact us for pricing.</p>
+ <p>Contact us for pricing.</p>
 
 </div>
 
@@ -699,826 +396,82 @@ body {
 
 <div class="footer">
 
-  <div class="footer-container">
+ <div class="footer-container">
 
-    <!-- ADDRESS -->
+   <!-- ADDRESS -->
 
-    <div class="footer-col">
+   <div>
 
-      <h3>Address</h3>
+     <h3>Address</h3>
 
-      <p>1b Headlands</p>
+     <p>1b Headlands</p>
 
-      <p>Kettering, Northamptonshire</p>
+     <p>Kettering</p>
 
-      <p>NN15 7ER</p>
+     <p>NN15 7ER</p>
+
      <a href="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER" target="_blank">
 
-  <iframe
+       <iframe
 
-    src="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER&output=embed"
+         src="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER&output=embed"
 
-    width="100%"
+         width="100%"
 
-    height="180"
+         height="180"
 
-    style="border:0; border-radius: 12px; margin-top: 15px;"
+         style="border:0; border-radius:12px;">
 
-    allowfullscreen=""
+       </iframe>
 
-    loading="lazy">
+     </a>
 
-  </iframe>
-
-</a>
-
-    </div>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-<link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pigmentica</title>
-
-<style>
- .about-container {
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 60px;
-
-  max-width: 1100px;
-
-  margin: auto;
-
-  flex-wrap: wrap;
-
-}
-
-.about-image {
-
-  flex: 1;
-
-  text-align: center;
-
-}
-
-.about-image img {
-
-  width: 100%;
-
-  max-width: 350px;
-
-  border-radius: 20px;
-
-  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-
-}
-
-.about-text {
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center; /* vertically centre text block */
-
-}
-
-.about-text h2 {
-
-  color: gold;
-
-  margin-bottom: 20px;
-
-}
-
-.about-text p {
-
-  margin-bottom: 15px;
-
-  line-height: 1.6;
-
-  opacity: 0.9;
-
-}
-
-.about-text strong {
-
-  color: gold;
-
-}
-   .section p {
-
-    max-width: 700px;
-
-    margin: 15px auto;
-
-    line-height: 1.6;
-
-    font-size: 16px;
-
-    opacity: 0.9;
-
-}
- .section h2 {
-
-  text-align: center;
-
-  width: 100%;
-
-}
-
-.section strong {
-
-    color: gold;
-
-    letter-spacing: 1px;
-
-}
- .button {
-
-  display: block;
-
-  width: fit-content;
-
-  margin: 30px auto 0; /* THIS centers it */
-
-  padding: 12px 25px;
-
-  background: gold;
-
-  color: black;
-
-  border-radius: 30px;
-
-  text-decoration: none;
-
-  text-align: center;
-
-}
- .consult-btn {
-
-   margin-left: 20px;
-
-   padding: 10px 22px;
-
-   background: transparent;              /* no fill */
-
-   color: gold;                          /* gold text */
-
-   border: 2px solid gold;               /* gold frame */
-
-   border-radius: 30px;
-
-   text-decoration: none;
-
-   font-weight: bold;
-
-   letter-spacing: 0.5px;
-
-   transition: all 0.3s ease;
-
-}
-
-.consult-btn:hover {
-
-   background: rgba(212, 175, 55, 0.1);  /* soft gold glow */
-
-   color: #fff3b0;                       /* lighter gold text */
-
-   border-color: #fff3b0;
-
-}
- .footer {
-
-  background: rgba(20, 0, 0, 0.9);
-
-  padding: 50px 20px 20px;
-
-  margin-top: 60px;
-
-}
-
-.footer-container {
-
-  display: flex;
-
-  justify-content: space-between;
-
-  max-width: 1000px;
-
-  margin: auto;
-
-  flex-wrap: wrap;
-
-  gap: 40px;
-
-}
-
-.footer-col h3 {
-
-  color: gold;
-
-  margin-bottom: 15px;
-
-}
-
-.footer-col p {
-
-  margin: 5px 0;
-
-  opacity: 0.8;
-
-}
-
-.socials {
-
-  display: flex;
-
-  gap: 12px; /* space between icons */
-
-}
-
-.socials img {
-
-  width: 24px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-
-}
-
-.socials img:hover {
-
-  opacity: 0.7;
-
-}
-
-.footer-bottom {
-
-  text-align: center;
-
-  margin-top: 30px;
-
-  opacity: 0.6;
-
-  font-size: 14px;
-
-}
- .qr-section {
-
-  margin-top: 25px;
-
-  text-align: center;
-
-}
-
-.qr-code {
-
-  width: 160px;
-
-  height: 160px;
-
-  object-fit: contain;
-
-  border-radius: 10px;
-
-  background: white;
-
-  padding: 8px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-  transition: 0.3s;
-
-}
-
-.qr-code:hover {
-
-  transform: scale(1.05);
-
-}
- @media (max-width: 768px) {
-
-  .about-container {
-
-    flex-direction: column;
-
-    text-align: center;
-
-  }
-
-  .about-text {
-
-    align-items: center;
-
-    text-align: center;
-
-  }
-
-}
-
- .about-text {
-
-  flex: 1;
-
-  max-width: 500px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: flex-start; /* keeps text to the right side */
-
-  text-align: left;
-
-}
- .section {
-
-   background: transparent;
-
-}
-
-/* VIDEO BACKGROUND */
-.video-bg {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   z-index: -2;
-}
-
-.overlay {
-   position: fixed;
-   width: 100%;
-   height: 100%;
-   background: rgba(30, 0, 0, 0.35);
-   z-index: -1;
-}
-
-body {
-   margin: 0;
-   font-family: Georgia, serif;
-   color: white;
-}
-
-/* BANNER */
-.banner {
-   width: 100%;
-   height: 250px;
-   background: url('banner.jpg') center/cover no-repeat;
-}
-
-/* HEADER */
-.header {
-   display: flex;
-   align-items: center;
-   gap: 40px;
-   padding: 20px;
-   position: sticky;
-   top: 0;
-   background: rgba(60, 0, 0, 0.7);
-   backdrop-filter: blur(6px);
-}
-
-.logo img {
-   width: 80px;
-   border-radius: 50%;
-}
-
-.menu a {
-   margin-right: 20px;
-   color: gold;
-   text-decoration: none;
-}
-
-/* HERO */
-.hero {
-
-   text-align: center;
-
-   padding: 30px 20px 20px; /* reduced top & bottom */
-
-}
- .hero h1 {
-
-   margin-bottom: 10px;
-
-}
-
-.hero-tagline {
-
-   margin-top: 5px;
-
-}
-
-.hero h1 {
- font-size: 48px;
-
-   letter-spacing: 4px;
-
-   background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
-
-   -webkit-background-clip: text;
-
-   -webkit-text-fill-color: transparent;
-
-}
-.hero-tagline {
-
-   font-family: 'Nothing You Could Do', cursive;
-
-   font-size: 36px;
-
-   color: #f5e6c8;
-
-   margin-top: 15px;
-
-   display: inline-block;
-
-   overflow: hidden;
-
-   /* animation */
-
-   animation: handwriting 3s ease forwards;
-
-}
- .qr-section {
-
-   margin-top: 30px;
-
-   text-align: center;
-
-}
-
-.qr-code {
-
-   width: 180px;      /* increase size */
-
-   height: 180px;
-
-   border-radius: 12px;
-
-   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
-   transition: 0.3s;
-
-}
-
-.qr-code:hover {
-
-   transform: scale(1.05);
-
-}
- @keyframes handwriting {
-
-   0% {
-
-      clip-path: inset(0 100% 0 0);
-
-      opacity: 0;
-
-   }
-
-   100% {
-
-      clip-path: inset(0 0 0 0);
-
-      opacity: 1;
-
-   }
- }
-
-/* SECTIONS */
-.section {
-
-   padding: 40px 20px; /* tighter */
-
-}
- #treatments h2 {
-
-   margin-top: 10px;
-
-}
-
-.section h2 {
-   color: gold;
-}
-
-/* TREATMENTS */
-.treatments {
-   display: flex;
-   overflow-x: auto;
-   gap: 20px;
-   padding: 20px;
-}
-
-.card {
-   min-width: 260px;
-   border-radius: 20px;
-   overflow: hidden;
-   text-align: center;
-}
-
-.card img {
-   width: 100%;
-   height: auto;
-   border-radius: 20px;
-}
-
-.card span {
-   display: block;
-   margin-top: 12px;
-   font-size: 18px;
-   letter-spacing: 2px;
-   color: gold;
-}
-
-.card:hover {
-   transform: translateY(-5px);
-   transition: 0.3s;
-}
-
-/* BUTTON */
-.button {
-   padding: 12px 25px;
-   background: gold;
-   color: black;
-   border-radius: 30px;
-   text-decoration: none;
-}
-   /* CONTACT LAYOUT FIX */
-
-.contact-line {
-
-   display: flex;
-
-   align-items: center;
-
-   justify-content: center;
-
-   gap: 10px;
-
-   margin: 10px 0;
-
-   color: gold;
-
-   text-decoration: none;
-
-   font-size: 18px;
-
-}
-/* INSTAGRAM LINK */
-
-.insta-link {
-
-   display: inline-flex;
-
-   align-items: center;
-
-   gap: 10px;
-
-   color: gold;
-
-   text-decoration: none;
-
-   font-size: 18px;
-
-   margin-top: 15px;
-
-}
-
-.insta-link:hover {
-
-   opacity: 0.7;
-
-}
-
-.insta-icon {
-
-   width: 22px;
-}
-
-  
-</style>
-</head>
-
-<body>
-
-<video autoplay muted loop playsinline class="video-bg">
-   <source src="background.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<div class="banner"></div>
-
-<div class="header">
-   <div class="logo">
-       <img src="logo.png">
    </div>
-   <div class="menu">
 
-   <a href="#about">About</a>
+   <!-- CONTACT -->
 
-   <a href="#treatments">Treatments</a>
+   <div>
 
-   <a href="#prices">Prices</a>
+     <h3>Contact</h3>
 
-   <a href="#contact">Contact</a>
+     <p>📞 <a href="tel:07550012000">07550 012000</a></p>
 
-   <a href="https://wa.me/447550012000" class="consult-btn">
+     <p>✉️ <a href="mailto:info@pigmentica.uk">info@pigmentica.uk</a></p>
 
-      Book Free Consultation
+     <div class="socials">
 
-   </a>
+       <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
 
-</div>
-</div>
+         <img src="instagram.png">
 
-<div class="hero">
-
-   <h1>PIGMENTICA</h1>
-
-   <p class="hero-tagline">Wake up confident every day!</p>
-
-</div>
-
-<div class="section" id="treatments">
-   <h2>Choose Your Treatment</h2>
-
-   <div class="treatments">
-       <a href="brows.html" class="card">
-           <img src="brows.jpg">
        </a>
 
-       <a href="lips.html" class="card">
-           <img src="lips.jpg">
+       <a href="https://www.facebook.com/Pigmentica/" target="_blank">
+
+         <img src="facebook.png">
+
        </a>
 
-       <a href="eyes.html" class="card">
-           <img src="eyes.jpg">
-       </a>
+     </div>
+
+     <div class="qr-section">
+
+       <img src="qr.png" class="qr-code">
+
+     </div>
+
    </div>
-</div>
- <div class="section about-section" id="about">
 
-  <div class="about-container">
+ </div>
 
-    <div class="about-image">
+ <div class="footer-bottom">
 
-      <img src="about.jpg" alt="Pigmentica Artist">
+   © 2025 Pigmentica. All Rights Reserved.
 
-    </div>
-
-    <div class="about-text">
-
-      <h2>About Pigmentica</h2>
-
-      <p>
-
-      At Pigmentica, semi-permanent makeup is approached as a refined art — where precision, elegance, and individuality come together to enhance your natural beauty.
-
-      </p>
-
-      <p><strong>Passion</strong><br>
-
-      Driven by a deep passion for beauty and artistry, each treatment is performed with meticulous care and an eye for perfection.
-
-      </p>
-
-      <p><strong>Vision</strong><br>
-
-      To redefine modern beauty through soft, natural enhancements that elevate confidence.
-
-      </p>
-
-      <p><strong>Mission</strong><br>
-
-      To deliver personalised, high-end results using advanced techniques and premium pigments.
-       </p>
-
-    </div>
-
-  </div>
-
-</div> <!-- closes about section -->
-
-<div class="section" id="prices">
-
-   <h2>Prices</h2>
-
-   <p>Contact us for pricing.</p>
+ </div>
 
 </div>
 
-<!-- FOOTER -->
+</body>
 
-<div class="footer">
-
-  <div class="footer-container">
-
-    <!-- ADDRESS -->
-
-    <div class="footer-col">
-
-      <h3>Address</h3>
-
-      <p>1b Headlands</p>
-
-      <p>Kettering, Northamptonshire</p>
-
-      <p>NN15 7ER</p>
-     <a href="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER" target="_blank">
-
-  <iframe
-
-    src="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER&output=embed"
-
-    width="100%"
-
-    height="180"
-
-    style="border:0; border-radius: 12px; margin-top: 15px;"
-
-    allowfullscreen=""
-
-    loading="lazy">
-
-  </iframe>
-
-</a>
-
-    </div>
-
-    <!-- CONTACT -->
-
-    <div class="footer-col">
-
-      <h3>Contact</h3>
-
-      <p>📞 07550 012000</p>
-
-      <p>✉️ info@pigmentica.uk</p>
-
-   <div class="socials">
-    <div class="qr-section">
-
-  <img src="qr.png" alt="QR Code" class="qr-code">
-
-</div>
-
-  <!-- INSTAGRAM -->
-
-  <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
-
-    <img src="instagram.png" alt="Instagram">
-
-  </a>
-
-  <!-- FACEBOOK -->
-
-  <a href="https://www.facebook.com/Pigmentica/" target="_blank">
-
-    <img src="facebook.png" alt="Facebook">
-
-  </a>
-
-</div>
-    </div>
-
-  </div>
-
-  <!-- COPYRIGHT -->
-
-  <div class="footer-bottom">
-
-    © 2025 Pigmentica. All Rights Reserved.
-
-  </div>
-
-</div>
-
-  </div>
-
-  <!-- COPYRIGHT -->
-
-  <div class="footer-bottom">
-
-    © 2025 Pigmentica. All Rights Reserved.
-
-  </div>
-
-</div>
+</html>
