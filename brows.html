@@ -8,142 +8,143 @@
 
 <style>
 
-/* FLOATING IMAGE FIX */
+/* FLOATING IMAGE */
 .hero-image {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 160px;
-  z-index: 999;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .hero-image {
-     position: fixed;
-     top: 10px;
-     right: 10px;
-     width: 100px;
-  }
+ position: fixed;
+ top: 20px;
+ right: 20px;
+ width: 160px;
+ z-index: 999;
+ border-radius: 20px;
 }
 
 /* BACKGROUND */
 .video-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ z-index: -2;
 }
 
 .overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(30, 0, 0, 0.65);
-  z-index: -1;
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ background: rgba(30,0,0,0.65);
+ z-index: -1;
 }
 
 body {
-  margin: 0;
-  font-family: Georgia, serif;
-  color: white;
+ margin: 0;
+ font-family: Georgia;
+ color: white;
 }
 
 /* HEADER */
 .header {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  background: rgba(60, 0, 0, 0.85);
-  backdrop-filter: blur(6px);
-  z-index: 5;
-}
-
-.logo img {
-  width: 80px;
-  border-radius: 50%;
+ display: flex;
+ gap: 40px;
+ padding: 20px;
+ position: sticky;
+ top: 0;
+ background: rgba(60,0,0,0.85);
 }
 
 .menu a {
-  margin-right: 20px;
-  color: gold;
-  text-decoration: none;
+ color: gold;
+ margin-right: 20px;
 }
 
-<!-- HERO -->
+/* HERO */
+.hero-wrapper {
+ text-align: center;
+ padding: 100px 20px;
+}
 
-<div class="hero-wrapper">
+.hero-text h1 {
+ color: gold;
+ font-size: 48px;
+}
 
-   <div class="hero-text">
+.hero-text p {
+ font-family: 'Nothing You Could Do';
+ font-size: 30px;
+}
 
-      <h1>BROWS</h1>
+/* TREATMENTS */
+.section {
+ text-align: center;
+}
 
-      <p>Natural. Defined. Beautiful.</p>
+.brow-grid {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 30px;
+}
 
-   </div>
+.brow-card {
+ width: 250px;
+}
 
+.brow-card img {
+ width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<video autoplay muted loop class="video-bg">
+<source src="background.mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="header">
+<div class="menu">
+<a href="index.html">Home</a>
+</div>
 </div>
 
-<!-- TREATMENTS (NOW IN RIGHT PLACE) -->
+<img src="brows.jpg" class="hero-image">
+
+<div class="hero-wrapper">
+<div class="hero-text">
+<h1>BROWS</h1>
+<p>Natural. Defined. Beautiful.</p>
+</div>
+</div>
 
 <div class="section">
+<h2>Our Brow Treatments</h2>
 
-   <h2>Our Brow Treatments</h2>
+<div class="brow-grid">
 
-   <div class="brow-grid">
+<div class="brow-card">
+<img src="powder.jpg">
+<h3>Powder Brows</h3>
+</div>
 
-      <div class="brow-card">
+<div class="brow-card">
+<img src="nano.jpg">
+<h3>Nano Brows</h3>
+</div>
 
-         <img src="powder.jpg">
+<div class="brow-card">
+<img src="hyper.jpg">
+<h3>Hyper Realism Brows</h3>
+</div>
 
-         <h3>Powder Brows</h3>
+<div class="brow-card">
+<img src="removal.jpg">
+<h3>Removal (Hanafy)</h3>
+</div>
 
-         <p>Soft shaded brows for a fuller makeup effect.</p>
-
-      </div>
-
-      <div class="brow-card">
-
-         <img src="nano.jpg">
-
-         <h3>Nano Brows</h3>
-
-         <p>Ultra-fine hair strokes for natural precision.</p>
-
-      </div>
-
-      <div class="brow-card">
-
-         <img src="hyper.jpg">
-
-         <h3>Hyper Realism Brows</h3>
-
-         <p>Advanced technique for the most natural look.</p>
-
-      </div>
-
-      <div class="brow-card">
-
-         <img src="removal.jpg">
-
-         <h3>Removal (Hanafy)</h3>
-
-         <p>Safe pigment removal and correction treatment.</p>
-
-      </div>
-
-   </div>
-
+</div>
 </div>
 
 </body>
-
 </html>
