@@ -131,25 +131,33 @@
 
    margin-left: 20px;
 
-   padding: 10px 18px;
+   padding: 10px 22px;
 
-   background: gold;
+   background: transparent;              /* no fill */
 
-   color: black;
+   color: gold;                          /* gold text */
 
-   border-radius: 25px;
+   border: 2px solid gold;               /* gold frame */
+
+   border-radius: 30px;
 
    text-decoration: none;
 
    font-weight: bold;
 
-   transition: 0.3s;
+   letter-spacing: 0.5px;
+
+   transition: all 0.3s ease;
 
 }
 
 .consult-btn:hover {
 
-   background: #fff3b0;
+   background: rgba(212, 175, 55, 0.1);  /* soft gold glow */
+
+   color: #fff3b0;                       /* lighter gold text */
+
+   border-color: #fff3b0;
 
 }
  @media (max-width: 768px) {
