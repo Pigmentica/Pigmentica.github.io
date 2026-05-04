@@ -413,6 +413,33 @@ body {
    animation: handwriting 3s ease forwards;
 
 }
+ .qr-section {
+
+   margin-top: 30px;
+
+   text-align: center;
+
+}
+
+.qr-code {
+
+   width: 180px;      /* increase size */
+
+   height: 180px;
+
+   border-radius: 12px;
+
+   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+   transition: 0.3s;
+
+}
+
+.qr-code:hover {
+
+   transform: scale(1.05);
+
+}
  @keyframes handwriting {
 
    0% {
@@ -706,8 +733,6 @@ body {
 
    <div class="socials">
     <div class="qr-section">
-
-  <p style="margin-top:15px;">Scan to Book</p>
 
   <img src="qr.png" alt="QR Code" class="qr-code">
 
