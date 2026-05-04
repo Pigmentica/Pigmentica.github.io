@@ -202,11 +202,27 @@
 
 }
 
+.socials {
+
+  display: flex;
+
+  gap: 12px; /* space between icons */
+
+}
+
 .socials img {
 
   width: 24px;
 
-  margin-top: 10px;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.socials img:hover {
+
+  opacity: 0.7;
 
 }
 
@@ -661,16 +677,25 @@ body {
 
       <p>✉️ info@pigmentica.uk</p>
 
-      <div class="socials">
+   <div class="socials">
 
-        <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
+  <!-- INSTAGRAM -->
 
-          <img src="instagram.png">
+  <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
 
-        </a>
+    <img src="instagram.png" alt="Instagram">
 
-      </div>
+  </a>
 
+  <!-- FACEBOOK -->
+
+  <a href="https://www.facebook.com/Pigmentica/" target="_blank">
+
+    <img src="facebook.png" alt="Facebook">
+
+  </a>
+
+</div>
     </div>
 
   </div>
