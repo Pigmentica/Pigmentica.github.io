@@ -14,47 +14,49 @@
 
 <style>
 
+/* GENERAL */
+
 body {
 
- margin: 0;
+   margin: 0;
 
- font-family: Georgia, serif;
+   font-family: Georgia, serif;
 
- color: white;
+   color: white;
 
 }
 
-/* BACKGROUND */
+/* VIDEO BACKGROUND */
 
 .video-bg {
 
- position: fixed;
+   position: fixed;
 
- top: 0;
+   top: 0;
 
- left: 0;
+   left: 0;
 
- width: 100%;
+   width: 100%;
 
- height: 100%;
+   height: 100%;
 
- object-fit: cover;
+   object-fit: cover;
 
- z-index: -2;
+   z-index: -2;
 
 }
 
 .overlay {
 
- position: fixed;
+   position: fixed;
 
- width: 100%;
+   width: 100%;
 
- height: 100%;
+   height: 100%;
 
- background: rgba(30, 0, 0, 0.35);
+   background: rgba(30, 0, 0, 0.35);
 
- z-index: -1;
+   z-index: -1;
 
 }
 
@@ -62,49 +64,57 @@ body {
 
 .header {
 
- display: flex;
+   display: flex;
 
- align-items: center;
+   align-items: center;
 
- gap: 40px;
+   gap: 40px;
 
- padding: 20px;
+   padding: 20px;
 
- position: sticky;
+   position: sticky;
 
- top: 0;
+   top: 0;
 
- background: rgba(60, 0, 0, 0.7);
+   background: rgba(60, 0, 0, 0.7);
 
- backdrop-filter: blur(6px);
+   backdrop-filter: blur(6px);
+
+}
+
+.logo img {
+
+   width: 80px;
+
+   border-radius: 50%;
 
 }
 
 .menu a {
 
- margin-right: 20px;
+   margin-right: 20px;
 
- color: gold;
+   color: gold;
 
- text-decoration: none;
+   text-decoration: none;
 
 }
 
+/* BUTTON */
+
 .consult-btn {
 
- padding: 10px 22px;
+   padding: 10px 22px;
 
- background: transparent;
+   border: 2px solid gold;
 
- color: gold;
+   border-radius: 30px;
 
- border: 2px solid gold;
+   color: gold;
 
- border-radius: 30px;
+   text-decoration: none;
 
- text-decoration: none;
-
- font-weight: bold;
+   font-weight: bold;
 
 }
 
@@ -112,35 +122,31 @@ body {
 
 .hero {
 
- text-align: center;
+   text-align: center;
 
- padding: 30px 20px 20px;
+   padding: 40px 20px;
 
 }
 
 .hero h1 {
 
- font-size: 48px;
+   font-size: 48px;
 
- letter-spacing: 4px;
+   letter-spacing: 4px;
 
- background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
+   background: linear-gradient(45deg, #d4af37, #fff3b0, #d4af37);
 
- -webkit-background-clip: text;
+   -webkit-background-clip: text;
 
- -webkit-text-fill-color: transparent;
+   -webkit-text-fill-color: transparent;
 
 }
 
 .hero-tagline {
 
- font-family: 'Nothing You Could Do', cursive;
+   font-family: 'Nothing You Could Do', cursive;
 
- font-size: 36px;
-
- color: #f5e6c8;
-
- margin-top: 10px;
+   font-size: 36px;
 
 }
 
@@ -148,15 +154,15 @@ body {
 
 .section {
 
- padding: 40px 20px;
-
- text-align: center;
+   padding: 40px 20px;
 
 }
 
 .section h2 {
 
- color: gold;
+   color: gold;
+
+   text-align: center;
 
 }
 
@@ -164,21 +170,31 @@ body {
 
 .treatments {
 
- display: flex;
+   display: flex;
 
- gap: 20px;
+   overflow-x: auto;
 
- overflow-x: auto;
+   gap: 20px;
 
- padding: 20px;
+   padding: 20px;
+
+}
+
+.card {
+
+   min-width: 260px;
+
+   border-radius: 20px;
+
+   overflow: hidden;
 
 }
 
 .card img {
 
- width: 260px;
+   width: 100%;
 
- border-radius: 20px;
+   border-radius: 20px;
 
 }
 
@@ -186,31 +202,29 @@ body {
 
 .about-container {
 
- display: flex;
+   display: flex;
 
- gap: 40px;
+   gap: 40px;
 
- max-width: 1000px;
+   max-width: 1100px;
 
- margin: auto;
+   margin: auto;
 
- flex-wrap: wrap;
+   flex-wrap: wrap;
 
 }
 
 .about-image img {
 
- width: 100%;
+   max-width: 350px;
 
- max-width: 350px;
-
- border-radius: 20px;
+   border-radius: 20px;
 
 }
 
 .about-text {
 
- max-width: 500px;
+   max-width: 500px;
 
 }
 
@@ -218,87 +232,69 @@ body {
 
 .footer {
 
- background: rgba(20, 0, 0, 0.9);
+  background: rgba(20, 0, 0, 0.9);
 
- padding: 50px 20px 20px;
-
- margin-top: 60px;
+  padding: 50px 20px 20px;
 
 }
 
 .footer-container {
 
- display: flex;
+  display: flex;
 
- justify-content: space-between;
+  justify-content: space-between;
 
- max-width: 1000px;
+  max-width: 1000px;
 
- margin: auto;
+  margin: auto;
 
- flex-wrap: wrap;
+  flex-wrap: wrap;
 
- gap: 40px;
-
-}
-
-.footer h3 {
-
- color: gold;
+  gap: 40px;
 
 }
 
-.footer a {
+.footer-col h3 {
 
- color: gold;
-
- text-decoration: none;
+  color: gold;
 
 }
-
-/* SOCIALS */
 
 .socials {
 
- display: flex;
+  display: flex;
 
- gap: 12px;
+  gap: 12px;
 
- margin-top: 10px;
+  margin-top: 10px;
 
 }
 
 .socials img {
 
- width: 24px;
+  width: 26px;
 
 }
 
-/* QR */
+/* QR FIX */
 
 .qr-section {
 
- margin-top: 25px;
+  margin-top: 20px;
 
- display: flex;
-
- justify-content: center;
+  text-align: center;
 
 }
 
 .qr-code {
 
- width: 160px;
+  width: 160px;
 
- height: 160px;
+  height: 160px;
 
- object-fit: contain;
+  object-fit: contain;
 
- background: white;
-
- padding: 10px;
-
- border-radius: 12px;
+  border-radius: 12px;
 
 }
 
@@ -306,13 +302,13 @@ body {
 
 .footer-bottom {
 
- text-align: center;
+  text-align: center;
 
- margin-top: 30px;
+  margin-top: 30px;
 
- opacity: 0.6;
+  opacity: 0.6;
 
- font-size: 14px;
+  font-size: 14px;
 
 }
 
@@ -324,151 +320,195 @@ body {
 
 <video autoplay muted loop playsinline class="video-bg">
 
- <source src="background.mp4" type="video/mp4">
+   <source src="background.mp4" type="video/mp4">
 
 </video>
 
 <div class="overlay"></div>
 
+<!-- HEADER -->
+
 <div class="header">
 
- <div class="menu">
+   <div class="logo">
 
-   <a href="#about">About</a>
+       <img src="logo.png">
 
-   <a href="#treatments">Treatments</a>
+   </div>
 
-   <a href="#prices">Prices</a>
+   <div class="menu">
 
-   <a href="#contact">Contact</a>
+     <a href="#about">About</a>
 
-   <a href="https://wa.me/447550012000" class="consult-btn">
+     <a href="#treatments">Treatments</a>
 
-     Book Free Consultation
+     <a href="#prices">Prices</a>
 
-   </a>
+     <a href="#contact">Contact</a>
 
- </div>
+     <a href="https://wa.me/447550012000" class="consult-btn">
 
-</div>
-
-<div class="hero">
-
- <h1>PIGMENTICA</h1>
-
- <p class="hero-tagline">Wake up confident every day!</p>
-
-</div>
-
-<div class="section" id="treatments">
-
- <h2>Choose Your Treatment</h2>
-
- <div class="treatments">
-
-   <a href="brows.html"><img src="brows.jpg"></a>
-
-   <a href="lips.html"><img src="lips.jpg"></a>
-
-   <a href="eyes.html"><img src="eyes.jpg"></a>
-
- </div>
-
-</div>
-
-<div class="section" id="about">
-
- <h2>About Pigmentica</h2>
-
- <p>Luxury semi-permanent makeup designed to enhance natural beauty.</p>
-
-</div>
-
-<div class="section" id="prices">
-
- <h2>Prices</h2>
-
- <p>Contact us for pricing.</p>
-
-</div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
- <div class="footer-container">
-
-   <!-- ADDRESS -->
-
-   <div>
-
-     <h3>Address</h3>
-
-     <p>1b Headlands</p>
-
-     <p>Kettering</p>
-
-     <p>NN15 7ER</p>
-
-     <a href="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER" target="_blank">
-
-       <iframe
-
-         src="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER&output=embed"
-
-         width="100%"
-
-         height="180"
-
-         style="border:0; border-radius:12px;">
-
-       </iframe>
+        Book Free Consultation
 
      </a>
 
    </div>
 
-   <!-- CONTACT -->
+</div>
 
-   <div>
+<!-- HERO -->
 
-     <h3>Contact</h3>
+<div class="hero">
 
-     <p>📞 <a href="tel:07550012000">07550 012000</a></p>
+   <h1>PIGMENTICA</h1>
 
-     <p>✉️ <a href="mailto:info@pigmentica.uk">info@pigmentica.uk</a></p>
+   <p class="hero-tagline">Wake up confident every day!</p>
 
-     <div class="socials">
+</div>
 
-       <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
+<!-- TREATMENTS -->
 
-         <img src="instagram.png">
+<div class="section" id="treatments">
 
-       </a>
+   <h2>Choose Your Treatment</h2>
 
-       <a href="https://www.facebook.com/Pigmentica/" target="_blank">
+   <div class="treatments">
 
-         <img src="facebook.png">
+       <a href="brows.html" class="card"><img src="brows.jpg"></a>
 
-       </a>
+       <a href="lips.html" class="card"><img src="lips.jpg"></a>
 
-     </div>
-
-     <div class="qr-section">
-
-       <img src="qr.png" class="qr-code">
-
-     </div>
+       <a href="eyes.html" class="card"><img src="eyes.jpg"></a>
 
    </div>
 
- </div>
+</div>
 
- <div class="footer-bottom">
+<!-- ABOUT -->
 
-   © 2025 Pigmentica. All Rights Reserved.
+<div class="section" id="about">
 
- </div>
+  <div class="about-container">
+
+    <div class="about-image">
+
+      <img src="about.jpg">
+
+    </div>
+
+    <div class="about-text">
+
+      <h2>About Pigmentica</h2>
+
+      <p>At Pigmentica, semi-permanent makeup is approached as a refined art.</p>
+
+      <p><strong>Passion</strong><br>
+
+      Driven by precision and care.</p>
+
+      <p><strong>Vision</strong><br>
+
+      To redefine modern beauty.</p>
+
+      <p><strong>Mission</strong><br>
+
+      Premium personalised results.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PRICES -->
+
+<div class="section" id="prices">
+
+   <h2>Prices</h2>
+
+   <p style="text-align:center;">Contact us for pricing.</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer" id="contact">
+
+  <div class="footer-container">
+
+    <!-- ADDRESS -->
+
+    <div class="footer-col">
+
+      <h3>Address</h3>
+
+      <p>1b Headlands</p>
+
+      <p>Kettering, Northamptonshire</p>
+
+      <p>NN15 7ER</p>
+
+      <a href="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER" target="_blank">
+
+        <iframe
+
+          src="https://www.google.com/maps?q=1b+Headlands+Kettering+NN15+7ER&output=embed"
+
+          width="100%"
+
+          height="180"
+
+          style="border-radius: 12px; margin-top: 15px;">
+
+        </iframe>
+
+      </a>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="footer-col">
+
+      <h3>Contact</h3>
+
+      <p>📞 <a href="tel:07550012000" style="color:gold;">07550 012000</a></p>
+
+      <p>✉️ info@pigmentica.uk</p>
+
+      <div class="socials">
+
+        <a href="https://www.instagram.com/pigmentica.uk" target="_blank">
+
+          <img src="instagram.png">
+
+        </a>
+
+        <a href="https://www.facebook.com/Pigmentica/" target="_blank">
+
+          <img src="facebook.png">
+
+        </a>
+
+      </div>
+
+      <div class="qr-section">
+
+        <img src="qr.png" class="qr-code">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+
+  <div class="footer-bottom">
+
+    © 2025 Pigmentica. All Rights Reserved.
+
+  </div>
 
 </div>
 
