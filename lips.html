@@ -1,1 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
 
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lip Blush - Pigmentica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+
+/* GENERAL */
+
+body {
+
+  margin: 0;
+
+  font-family: 'Open Sans', sans-serif;
+
+  color: white;
+
+}
+
+/* GOLD TEXT */
+
+.gold-text {
+
+  background: linear-gradient(45deg, #b8962e, #d4af37, #fff3b0, #d4af37, #b8962e);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+}
+
+/* VIDEO BACKGROUND */
+
+.video-bg {
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -2;
+
+}
+
+.overlay {
+
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: rgba(30, 0, 0, 0.35);
+
+  z-index: -1;
+
+}
+
+/* HEADER */
+
+.header {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 20px;
+
+  position: sticky;
+
+  top: 0;
+
+  background: rgba(60, 0, 0, 0.7);
+
+  backdrop-filter: blur(6px);
+
+}
+
+.logo img {
+
+  width: 80px;
+
+  border-radius: 50%;
+
+}
+
+.menu {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+}
+
+.menu a {
+
+  margin-right: 20px;
+
+  color: gold;
+
+  text-decoration: none;
+
+}
+
+.consult-btn {
+
+  padding: 10px 22px;
+
+  border: 2px solid gold;
+
+  border-radius: 30px;
+
+  color: gold;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+}
+
+/* PAGE TITLE */
+
+.page-title {
+
+  text-align: center;
+
+  padding: 40px 20px 10px;
+
+}
+
+.page-title h1 {
+
+  font-size: 42px;
+
+  margin: 0;
+
+}
+
+/* LIP SECTIONS */
+
+.lip-section {
+
+  text-align: center;
+
+  margin: 60px 0;
+
+}
+
+.lip-section h3 {
+
+  margin-bottom: 20px;
+
+  font-size: 22px;
+
+}
+
+.lip-image {
+
+  width: 80%;
+
+  max-width: 900px;
+
+  border-radius: 20px;
+
+  display: block;
+
+  margin: 0 auto;
+
+}
+
+/* FOOTER */
+
+.footer-bottom {
+
+  text-align: center;
+
+  margin: 40px 0 20px;
+
+  opacity: 0.6;
+
+  font-size: 14px;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .header {
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+  }
+
+  .menu {
+
+    justify-content: center;
+
+  }
+
+  .menu a {
+
+    font-size: 14px;
+
+    margin: 5px;
+
+  }
+
+  .consult-btn {
+
+    padding: 8px 16px;
+
+    font-size: 14px;
+
+  }
+
+  .page-title h1 {
+
+    font-size: 28px;
+
+  }
+
+  .lip-image {
+
+    width: 92%;
+
+  }
+
+  .lip-section h3 {
+
+    font-size: 18px;
+
+  }
+
+}
+
+</style>
+</head>
+<body>
+ <!-- BACKGROUND -->
+   <video autoplay muted loop playsinline class="video-bg">
+
+  <source src="background.mp4" type="video/mp4">
+
+</video>
+   <div class="overlay"></div>
+   <!-- HEADER -->
+   <div class="header">
+
+  <div class="logo">
+
+    <img src="logo.png">
+
+  </div>
+      <div class="menu">
+
+    <a href="index.html#about">About</a>
+
+    <a href="index.html#treatments">Treatments</a>
+
+    <a href="index.html#prices">Prices</a>
+
+    <a href="index.html#contact">Contact</a>
+         <a href="https://wa.me/447550012000" class="consult-btn">
+
+  Book Free Consultation
+
+</a>
+          </div>
+
+</div>
+<!-- TITLE -->
+  <div class="page-title">
+
+  <h1 class="gold-text">Lip Blush</h1>
+
+</div>
+<!-- LIP TYPES -->
+  <div class="lip-section">
+
+  <h3 class="gold-text">Lip Blush</h3>
+
+  <img src="lip-blush.jpg" class="lip-image">
+
+</div>
+<div class="lip-section">
+
+  <h3 class="gold-text">Neutralisation</h3>
+
+  <img src="neutralisation.jpg" class="lip-image">
+
+</div>
+<div class="lip-section">
+
+  <h3 class="gold-text">Dark Lip Correction</h3>
+
+  <img src="dark-lips.jpg" class="lip-image">
+
+</div>
+<!-- FOOTER -->
+  <div class="footer-bottom">
+
+  © 2025 Pigmentica. All Rights Reserved.
+
+</div>
+</body>
+
+</html>
