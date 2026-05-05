@@ -183,13 +183,30 @@ body {
 
    margin-top: 15px;
 
-   letter-spacing: 1px;
-
    opacity: 0;
 
-   transform: translateY(10px);
+   transform: translateY(20px);
 
-   animation: handwritingFade 2s ease forwards;
+   animation: handwritingReveal 1.8s ease forwards;
+
+}
+   .hero-tagline {
+
+   letter-spacing: 1px;
+
+   text-shadow: 0 0 8px rgba(255, 230, 200, 0.3);
+
+}
+
+@keyframes handwritingReveal {
+
+   to {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+   }
 
 }
    .handwriting-svg {
@@ -554,25 +571,15 @@ body {
 
 <!-- HERO -->
 
-<div class="hero-tagline">
+<div class="hero">
 
-<svg viewBox="0 0 900 120" class="handwriting-svg">
+  <h1>PIGMENTICA</h1>
 
-  <path d="M20,80 
+  <p class="hero-tagline">
 
-           C80,20 140,20 200,80 
+    Wake up confident every day!
 
-           S320,140 380,80 
-
-           S500,20 560,80 
-
-           S680,140 740,80 
-
-           S860,20 900,80"
-
-        class="handwriting-path"/>
-
-</svg>
+  </p>
 
 </div>
 
