@@ -182,21 +182,24 @@ body {
   margin: 0 auto;
 
 }
-  .treatment-img {
+ .treatment-img {
 
-  width: 80%;
+  width: 90%;
 
   max-width: 900px;
 
-  height: 300px;              /* 🔥 forces same height */
-
-  object-fit: cover;          /* 🔥 crops nicely */
+  height: auto;              /* ✅ keeps full image */
 
   border-radius: 20px;
 
   display: block;
 
   margin: 30px auto;
+
+}
+  .treatment-img {
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
 
 }
 
@@ -256,11 +259,6 @@ body {
 
   }
 
-  .lip-image {
-
-    width: 92%;
-
-  }
 
   .lip-section h3 {
 
@@ -314,21 +312,18 @@ body {
 <!-- LIP TYPES -->
   <div class="lip-section">
 
-  <h3 class="gold-text">Lip Blush</h3>
 
   <img src="lip-blush.jpg" class="treatment-img">
 
 </div>
 <div class="lip-section">
 
-  <h3 class="gold-text">Neutralisation</h3>
 
   <img src="neutralisation.jpg" class="treatment-img">
 
 </div>
 <div class="lip-section">
 
-  <h3 class="gold-text">Dark Lip Correction</h3>
 
   <img src="dark-lip.jpg" class="treatment-img">
 
